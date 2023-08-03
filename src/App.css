@@ -1,0 +1,29 @@
+*{
+  border: 0px;
+  margin: 0px;
+  font-family: 'Titillium Web', sans-serif;
+  
+  /* -ms-overflow-style: none; 
+  scrollbar-width: none; 
+  overflow-y: scroll; remove when done */
+}
+
+*::-webkit-scrollbar {
+  display: none; 
+}
+main{
+  padding: 0 20px;
+}
+
+.video{
+  display: flex;
+  justify-content: center;
+
+  width: calc(100vw - 40px);
+  height: calc(100vh - 110px);
+  background-color: black;
+}
+
+
+
+
