@@ -1,12 +1,17 @@
 nav{
     display: flex;
+    position: absolute;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 100px;
+    padding: 20px 5%;
+    
+    width: 90%;
+   
 }
 
 .right-container-nav{
     display: flex;
     gap: 30px;
+    color: white;
     
 }
