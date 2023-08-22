@@ -11,8 +11,7 @@
 *::-webkit-scrollbar {
   display: none;
 }
-main {
-}
+
 .gradient {
   position: absolute;
   z-index: 100;
@@ -38,15 +37,14 @@ main {
   width: 100vw;
 }
 
-/* Second Page */
+/* WORK PAGE*/
 
 .our-work {
   display: flex;
   flex-direction: column;
-  
+
   align-items: center;
-  height: 100vh;
-  width: 100vw;
+  padding: 0 0 50px 0;
   background-color: black;
 }
 
@@ -60,37 +58,118 @@ main {
 }
 .work-title {
   color: white;
+  font-size: 60px;
+  font-weight: 700;
+  text-align: center;
 }
-.video-container{
+
+/* add on hover efect to proc the tittle */
+/* .video-text{
+ 
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 0;
+  color: whitesmoke;
+  position: relative;
+  top: 45%;
+  font-weight: 700;
+  
+  font-size: 33px;
+  
+} */
+.video-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  width: 80%;
+  justify-content: center;
+  grid-template-columns: repeat(2, 45%);
+
   gap: 10px;
-  
 }
-.test-video{
-  
-  
-  aspect-ratio: 1.85/1;
-}
-.small-video{
-width: calc(100% - 0px);
-/* Nu stiu de ce merge asta dar las-o asa */
+
+.small-video {
+  width: 100%;
+  height: 100%;
 
   object-fit: cover;
-  aspect-ratio: inherit;
+  aspect-ratio: 1.85/1;
 }
-.snap{
+.snap {
   position: fixed;
   width: 30px;
   z-index: 30000;
   height: 30px;
   top: 45%;
-  right:10px;
-  background-color: rgba(207, 159, 159, 0.411);
-  border-radius: 10px;
-  border: 2px solid  rgb(105, 88, 88);
+  right: 10px;
+  background-color: rgba(255, 255, 255, 0.103);
+
+  color: white;
+  border: 2px solid rgba(90, 89, 89, 0.226);
 }
-.two{
+.two {
   top: 50%;
+}
+.three {
+  top: 55%;
+}
+
+/* ABOUT PAGE */
+
+.second-page{
+  background-color: black;
+  display: flex;
+ 
+  justify-content: center;
+  padding-bottom: 50px;
+}
+.about-us {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  height: 100vh;
+  width: 90vw;
+
+  background-color: black;
+  color: white;
+  align-items: normal;
+}
+.about-us-container {
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding: 20px;
+  width: 70%;
+  color: white;
+  
+}
+.about-us-container.two-section {
+  display: flex;
+  margin-left: auto;
+  align-items: end;
+  transition-delay: 200ms;
+}
+
+.about-us-container.three-section{
+  transition-delay: 400ms;
+}
+
+
+
+.big-tittles {
+  font-size: 72px;
+}
+.text-about {
+  font-size: 24px;
+}
+.hidden {
+  opacity: 0;
+  filter: blur(1px);
+  transform: translateX(-10%);
+  transition: all 1s
+}
+.show{
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
 }
