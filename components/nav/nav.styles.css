@@ -4,10 +4,22 @@ nav{
     justify-content: space-between;
     align-items: center;
     padding: 20px 5%;
-    
+    z-index: 10000000;
     width: 90%;
    
 }
+a { 
+    /* fun cursor */
+    /* cursor: url("./bread.svg"), auto; */
+    cursor: pointer;
+    text-decoration: underline 0.15em rgba(0, 0, 0, 0);
+    transition: text-decoration-color 300ms;
+    font-size: 20px;
+  }
+  
+  a:hover {
+    text-decoration-color: rgb(255, 255, 255);
+  }
 
 .left-container-nav > svg{
     width: 50px;

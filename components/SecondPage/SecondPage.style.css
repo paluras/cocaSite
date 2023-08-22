@@ -1,0 +1,59 @@
+.second-page{
+    background-color: black;
+    display: flex;
+   
+    justify-content: center;
+    padding-bottom: 50px;
+  }
+  .about-us {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  
+    height: 100vh;
+    width: 90vw;
+  
+    background-color: black;
+    color: white;
+    align-items: normal;
+  }
+  .about-us-container {
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 20px;
+    width: 70%;
+    color: white;
+    
+  }
+  .about-us-container.two-section {
+    display: flex;
+    margin-left: auto;
+    align-items: end;
+    transition-delay: 200ms;
+  }
+  
+  .about-us-container.three-section{
+    transition-delay: 400ms;
+  }
+  
+  
+  
+  .big-tittles {
+    font-size: 72px;
+  }
+  .text-about {
+    font-size: 24px;
+  }
+  .hidden {
+    opacity: 0;
+    filter: blur(1px);
+    transform: translateX(-10%);
+    transition: all 1s
+  }
+  .show{
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+  }
