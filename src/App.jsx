@@ -4,6 +4,8 @@ import "./App.css";
 import { useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 
+import { FcGoogle } from "react-icons/fc";
+
 import FirstPage from "../components/FirstPage/FirstPage.component";
 import SecondPage from "../components/SecondPage/SecondPage.component";
 import ThirdPage from "../components/ThirdPage/ThirdPage.component";
@@ -65,7 +67,18 @@ function App() {
       <SecondPage visible={visible} ref={ref} />
 
       <ThirdPage videoObj={videoObj} />
-
+      {/* CLIENTS SECTION */}
+      <div className="worked-with">
+        | Clients |
+        <div className="worked-icons">
+          <FcGoogle />
+          <img src="./react.svg" alt="" />
+          <img
+            src="https://www.primatv.ro/assets/imgs/logo-prima-hd-2.png"
+            alt=""
+          />
+        </div>
+      </div>
       <Footer></Footer>
     </>
   );
