@@ -3,6 +3,7 @@ import Nav from "../components/nav/nav-component";
 import "./App.css";
 import { useState ,useRef, useEffect } from "react";
 import { useInView } from 'react-intersection-observer';
+import { LiaBreadSliceSolid }  from 'react-icons/lia'
 
 function App() {
   const [visible , setVisible] = useState()
@@ -51,7 +52,9 @@ console.log(visible);
 
       <Nav></Nav>
       <main id="first" className="first-page">
+        
         <div className="video-land">
+          <div className="icon-absolute"><LiaBreadSliceSolid /></div>
           <div className="gradient"></div>{" "}
           <video
             className="big-video"

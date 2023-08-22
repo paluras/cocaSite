@@ -1,6 +1,6 @@
 
 import './nav.styles.css'
-
+import { LiaBreadSliceSolid }  from 'react-icons/lia'
 function Nav() {
   
 
@@ -8,7 +8,7 @@ function Nav() {
     <>
      <nav>
       <div className="left-container-nav">
-        <img src="/logo.png" width="64px" height="64px" alt="Logo" />
+        <LiaBreadSliceSolid  />
       </div>
       <div className="right-container-nav">
         <div className="nav-menu"><h4>About Us</h4></div>
