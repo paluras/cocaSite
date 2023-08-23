@@ -21,9 +21,7 @@ function App() {
   useEffect(() => {
     const videoElement = document.querySelector('video');
     console.log(videoElement);
-    setTimeout(() => {
-      
-    }, 2000);
+
     // Listen for the 'loadeddata' event to detect when the video is loaded
     videoElement.addEventListener('loadeddata', () => {
       setIsVideoLoaded(true);
@@ -86,7 +84,7 @@ function App() {
 
       <Nav handleAbout={snapToTwo} handleProjects={snapToThree}></Nav>
      { isVideoLoaded ? <FirstPage videoSrc="./video_test.m4v" /> : <ImagePlaceholder /> }
-
+     {/* <ImagePlaceholder /> */}
       <SecondPage visible={visible} ref={ref} />
 
       <ThirdPage videoObj={videoObj} />

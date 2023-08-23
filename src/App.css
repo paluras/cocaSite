@@ -54,3 +54,24 @@ body{
   object-fit: contain;
 }
 
+
+.animateSvg {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: fillAndRevert 2s ease-in-out infinite alternate;
+}
+
+@keyframes fillAndRevert {
+  0% {
+      fill: transparent;
+      stroke-dashoffset: 1000;
+  }
+  50% {
+      fill: #ffffff; /* Change to the color you desire */
+      stroke-dashoffset: 0;
+  }
+  100% {
+      fill: transparent;
+      stroke-dashoffset: 1000;
+  }
+}
