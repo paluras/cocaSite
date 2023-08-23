@@ -22,15 +22,12 @@ function App() {
     const videoElement = document.querySelector('video');
 
 
-  
-
     // Listen for the 'loadeddata' event to detect when the video is loaded
     videoElement.addEventListener('loadeddata', () => {
-      setTimeout(()=>{
       setIsVideoLoaded(true); 
-    }, 1000)
+   
     });
- 
+    
     // Simulate loading the video (replace this with your actual video URL)
     // Replace with the path to your video
   }, []);
