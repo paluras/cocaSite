@@ -20,23 +20,22 @@ function App() {
 
   useEffect(() => {
     const videoElement = document.querySelector('video');
-    console.log(videoElement);
+
+
+  
 
     // Listen for the 'loadeddata' event to detect when the video is loaded
     videoElement.addEventListener('loadeddata', () => {
+      setTimeout(()=>{
       setIsVideoLoaded(true); 
-      const imagePlaceholder = document.getElementById('image-placeholder');
-      imagePlaceholder.classList.add('fade-out');
-      console.log(imagePlaceholder);
-      console.log(videoElement.style.opacity);
+    }, 1000)
     });
-    
+ 
     // Simulate loading the video (replace this with your actual video URL)
     // Replace with the path to your video
   }, []);
 
 
-  console.log(isVideoLoaded);
 
   
   const snapTo = () => {

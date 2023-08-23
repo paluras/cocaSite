@@ -1,7 +1,7 @@
 import "./nav.styles.css";
 import { LiaBreadSliceSolid } from "react-icons/lia";
 // eslint-disable-next-line react/prop-types
-function Nav({ handleAbout, handleProjects,}) {
+function Nav({ handleAbout, handleProjects, handleContact}) {
   return (
     <>
       <nav>
@@ -21,8 +21,8 @@ function Nav({ handleAbout, handleProjects,}) {
           <div className="nav-menu">
             <a>Team</a>
           </div>
-          <div className="nav-menu">
-            <a>Contact</a>
+          <div  className="nav-menu">
+            <a onClick={handleContact} >Contact</a>
           </div>
         </div>
       </nav>
