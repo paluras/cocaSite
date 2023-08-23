@@ -2,7 +2,7 @@ import { LiaBreadSliceSolid }  from 'react-icons/lia'
 import "./FirstPage.style.css"
 
 
-const FirstPage = ({videoSrc})=>{
+const FirstPage = ()=>{
   
 return(
     <>
@@ -12,7 +12,7 @@ return(
           <div className="gradient"></div>{" "}
           <video
             className="big-video"
-            src={videoSrc}
+            src="./video_test.m4v"
             autoPlay
             muted
             loop

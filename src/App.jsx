@@ -24,10 +24,12 @@ function App() {
 
     // Listen for the 'loadeddata' event to detect when the video is loaded
     videoElement.addEventListener('loadeddata', () => {
-      setIsVideoLoaded(true);
-      
+      setIsVideoLoaded(true); 
+      const imagePlaceholder = document.getElementById('image-placeholder');
+      imagePlaceholder.classList.add('fade-out');
+      console.log(videoElement.style.opacity);
     });
-
+    
     // Simulate loading the video (replace this with your actual video URL)
     // Replace with the path to your video
   }, []);
@@ -83,7 +85,7 @@ function App() {
       </button>
 
       <Nav handleAbout={snapToTwo} handleProjects={snapToThree}></Nav>
-     { isVideoLoaded ? <FirstPage videoSrc="./video_test.m4v" /> : <ImagePlaceholder /> }
+     { isVideoLoaded ? <FirstPage /> : <ImagePlaceholder  /> }
      {/* <ImagePlaceholder /> */}
       <SecondPage visible={visible} ref={ref} />
 

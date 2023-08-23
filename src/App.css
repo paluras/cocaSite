@@ -55,10 +55,22 @@ body{
 }
 
 
+
+/* PLace Holder */
+
+
 .animateSvg {
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
   animation: fillAndRevert 2s ease-in-out infinite alternate;
+}
+.placeholder{
+  background-color: black;
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+.placeholder.fadeout{
+  opacity: 0;
 }
 
 @keyframes fillAndRevert {
