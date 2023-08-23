@@ -27,6 +27,7 @@ function App() {
       setIsVideoLoaded(true); 
       const imagePlaceholder = document.getElementById('image-placeholder');
       imagePlaceholder.classList.add('fade-out');
+      console.log(imagePlaceholder);
       console.log(videoElement.style.opacity);
     });
     
@@ -85,7 +86,7 @@ function App() {
       </button>
 
       <Nav handleAbout={snapToTwo} handleProjects={snapToThree}></Nav>
-     { isVideoLoaded ? <FirstPage /> : <ImagePlaceholder  /> }
+     { isVideoLoaded ? <FirstPage /> : <ImagePlaceholder id="image-placeholder" /> }
      {/* <ImagePlaceholder /> */}
       <SecondPage visible={visible} ref={ref} />
 
