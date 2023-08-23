@@ -12,9 +12,27 @@ import ThirdPage from "../components/ThirdPage/ThirdPage.component";
 
 function App() {
   const [visible, setVisible] = useState();
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   const { ref, inView } = useInView({
     /* Optional options */
   });
+
+  useEffect(() => {
+    const videoElement = document.querySelector('video');
+
+    // Listen for the 'loadeddata' event to detect when the video is loaded
+    videoElement.addEventListener('loadeddata', () => {
+      setIsVideoLoaded(true);
+    });
+
+    // Simulate loading the video (replace this with your actual video URL)
+    // Replace with the path to your video
+  }, []);
+
+
+  console.log(isVideoLoaded);
+
+  
   const snapTo = () => {
     const firstPage = document.getElementById("first");
     firstPage.scrollIntoView({
@@ -62,7 +80,7 @@ function App() {
       </button>
 
       <Nav handleAbout={snapToTwo} handleProjects={snapToThree}></Nav>
-      <FirstPage />
+     { isVideoLoaded ? <FirstPage videoSrc="./video_test.m4v" /> : <FirstPage videoSrc="./video2vsmall.mp4" /> }
 
       <SecondPage visible={visible} ref={ref} />
 
