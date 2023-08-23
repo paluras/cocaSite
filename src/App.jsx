@@ -45,8 +45,8 @@ function App() {
     "./video_test2.mp4",
     "./video_test2.mp4",
     "./video_test2.mp4",
-    "./video_test2.mp4",
-    "./video_test2.mp4",
+    "./video2vsmall.mp4",
+    "./video2v.webm",
   ];
 
   return (

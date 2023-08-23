@@ -60,10 +60,11 @@
     position: absolute;
     bottom: 44%; /* Adjust this to your preferred vertical position */
     text-align: center;
-    
+    opacity: 0;
+    cursor: pointer;
     color: #fff;
     font-size: 24px;
-    opacity: 0;
+    
     transition: opacity 0.3s ease-in-out;
     width: 100%;
   }
@@ -71,10 +72,9 @@
   .test-video:hover::before {
     opacity: 1;
   }
+
+
   
-  .test-video:hover .title {
-    opacity: 1;
-  }
  
 .video-container {
   display: grid;

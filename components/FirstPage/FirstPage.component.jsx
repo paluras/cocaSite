@@ -3,6 +3,7 @@ import "./FirstPage.style.css"
 
 
 const FirstPage = ()=>{
+  
 return(
     <>
      <main id="first" className="first-page">

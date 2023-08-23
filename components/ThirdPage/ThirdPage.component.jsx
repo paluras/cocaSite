@@ -1,13 +1,15 @@
-import "./ThirdPage.style.css"
+import "./ThirdPage.style.css";
 
+// eslint-disable-next-line react/prop-types
 const ThirdPage = ({ videoObj }) => {
   const handleMouseEnter = (event) => {
     const video = event.target;
+    console.log(video);
     const overlay = video.parentElement.querySelector(".video-overlay");
     const title = video.parentElement.querySelector(".title");
 
-    if (overlay && title) {
-      overlay.style.opacity = "1";
+    if (video) {
+      overlay.style.opacity = "0";
       title.style.opacity = "1";
     }
   };
@@ -17,7 +19,7 @@ const ThirdPage = ({ videoObj }) => {
     const overlay = video.parentElement.querySelector(".video-overlay");
     const title = video.parentElement.querySelector(".title");
 
-    if (overlay && title) {
+    if (overlay.style.opacity == "0") {
       overlay.style.opacity = "0";
       title.style.opacity = "0";
     }
@@ -31,20 +33,22 @@ const ThirdPage = ({ videoObj }) => {
         </div>
         <div className="video-container">
           {videoObj.map((el, index) => (
-            <div className="test-video" key={index}>
+            <div
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+              className="test-video"
+              key={index}
+            >
               <video
-                text="titlu-film"
                 className="small-video"
                 src={el}
                 autoPlay
                 muted
                 loop
                 id={`myVideo-${index}`}
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
               ></video>
               <div className="video-overlay"></div>
-              <div className="title">Pe Faleza - Coca Andrei</div>
+              <a className="title">Pe Faleza - Coca Andrei</a>
             </div>
           ))}
         </div>
