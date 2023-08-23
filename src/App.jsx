@@ -9,6 +9,7 @@ import { FcGoogle } from "react-icons/fc";
 import FirstPage from "../components/FirstPage/FirstPage.component";
 import SecondPage from "../components/SecondPage/SecondPage.component";
 import ThirdPage from "../components/ThirdPage/ThirdPage.component";
+import ImagePlaceholder from "../components/VideoPlaceholder/VideoPlaceHolder";
 
 function App() {
   const [visible, setVisible] = useState();
@@ -80,7 +81,7 @@ function App() {
       </button>
 
       <Nav handleAbout={snapToTwo} handleProjects={snapToThree}></Nav>
-     { isVideoLoaded ? <FirstPage videoSrc="./video_test.m4v" /> : <FirstPage videoSrc="./video2vsmall.mp4" /> }
+     { isVideoLoaded ? <FirstPage videoSrc="./video_test.m4v" /> : <ImagePlaceholder /> }
 
       <SecondPage visible={visible} ref={ref} />
 
