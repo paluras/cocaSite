@@ -20,10 +20,14 @@ function App() {
 
   useEffect(() => {
     const videoElement = document.querySelector('video');
-
+    console.log(videoElement);
+    setTimeout(() => {
+      
+    }, 2000);
     // Listen for the 'loadeddata' event to detect when the video is loaded
     videoElement.addEventListener('loadeddata', () => {
       setIsVideoLoaded(true);
+      
     });
 
     // Simulate loading the video (replace this with your actual video URL)

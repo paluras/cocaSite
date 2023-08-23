@@ -1,4 +1,5 @@
 * {
+ 
   border: 0px;
   margin: 0px;
   font-family: "Titillium Web", sans-serif;
@@ -6,6 +7,9 @@
   -ms-overflow-style: none; 
   scrollbar-width: none; 
   overflow-y: scroll; 
+}
+body{
+  background-color: black;
 }
 
 *::-webkit-scrollbar {
