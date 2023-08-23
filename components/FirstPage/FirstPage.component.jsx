@@ -12,7 +12,7 @@ return(
           <div className="gradient"></div>{" "}
           <video
             className="big-video"
-            src="./Video.webm"
+            src="./var.mp4"
             autoPlay
             muted
             loop
