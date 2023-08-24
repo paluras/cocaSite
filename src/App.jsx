@@ -1,34 +1,23 @@
-import Footer from "../components/footer/footer.component";
-import Nav from "../components/nav/nav-component";
 import "./App.css";
+
 import { useState, useEffect, Suspense } from "react";
 import { useInView } from "react-intersection-observer";
+import { Route, Routes } from "react-router-dom";
 
-import { FcGoogle } from "react-icons/fc";
-
+import Footer from "../components/footer/footer.component";
+import Nav from "../components/nav/nav-component";
 import FirstPage from "../components/FirstPage/FirstPage.component";
 import SecondPage from "../components/SecondPage/SecondPage.component";
 import ThirdPage from "../components/ThirdPage/ThirdPage.component";
 import ImagePlaceholder from "../components/VideoPlaceholder/VideoPlaceHolder";
+import Landing from "../components/Landing/Landing.component";
+import Clients from "../components/Clients/Clients.component";
+import Blog from "../route/Blog.component";
 
 function App() {
   const [visible, setVisible] = useState();
-  // const [isVideoLoaded, setIsVideoLoaded] = useState(false);
-  const { ref, inView } = useInView({
-    /* Optional options */
-  });
+  const { ref, inView } = useInView({});
 
-  // useEffect(() => {
-  //   const videoElement = document.querySelector("video");
-
-  //   // Listen for the 'loadeddata' event to detect when the video is loaded
-  //   videoElement.addEventListener("loadeddata", () => {
-  //     setIsVideoLoaded(true);
-  //   });
-
-  //   // Simulate loading the video (replace this with your actual video URL)
-  //   // Replace with the path to your video
-  // }, []);
 
   const snapTo = () => {
     const firstPage = document.getElementById("first");
@@ -36,7 +25,6 @@ function App() {
       behavior: "smooth",
     });
   };
-
   const snapToTwo = () => {
     const secondPage = document.querySelector(".second-page");
     secondPage.scrollIntoView({
@@ -49,6 +37,12 @@ function App() {
       behavior: "smooth",
     });
   };
+  const snapToFour = () => {
+    const secondPage = document.querySelector("footer");
+    secondPage.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
 
   useEffect(() => {
     inView ? setVisible("show") : setVisible("hidden");
@@ -56,48 +50,81 @@ function App() {
   }, [inView]);
 
   const videoObj = [
-    "./video_test2.mp4",
-    "./video_test2.mp4",
-    "./video_test2.mp4",
-    "./video_test2.mp4",
     "./video2vsmall.mp4",
-    "./video2v.webm",
+    "./video2vsmall.mp4",
+    "./video2vsmall.mp4",
+    "./video2vsmall.mp4",
+    "./video2vsmall.mp4",
+    "./video2vsmall.mp4",
   ];
+  const navObjText = ["About Us", "Projects", "Blog", "Contact"];
+
+
+
+
+  // Create a function to update the viewport width in the state
+  // const updateViewportWidth = () => {
+  //   setViewportWidth(window.innerWidth);
+  // };
+
+  // // Add an event listener to update the viewport width when the window is resized
+  // useEffect(() => {
+  //   window.addEventListener('resize', updateViewportWidth);
+
+  //   // Clean up the event listener when the component unmounts
+  //   return () => {
+  //     window.removeEventListener('resize', updateViewportWidth);
+  //   };
+  // }, []); // The empty dependency array means this effect runs only once after mounting
+
+  // console.log(viewportWidth);
 
   return (
     <>
-      <button onClick={snapTo} className="snap">
-        I
-      </button>
-      <button onClick={snapToTwo} className="snap two">
-        II
-      </button>
-      <button onClick={snapToThree} className="snap three">
-        III
-      </button>
-      
-      <Nav handleAbout={snapToTwo} handleProjects={snapToThree}></Nav>
-      <Suspense fallback={<ImagePlaceholder id="image-placeholder" />}>
-        <FirstPage />
-      </Suspense>
-      
-      {/* { isVideoLoaded ? : <ImagePlaceholder id="image-placeholder" /> } */}
-      {/* <ImagePlaceholder /> */}
-      <SecondPage visible={visible} ref={ref} />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Landing>
+              <Nav
+                text={navObjText}
+                handleAbout={snapToTwo}
+                handleProjects={snapToThree}
+                handleContact={snapToFour}
+              ></Nav>
 
-      <ThirdPage videoObj={videoObj} />
-      {/* CLIENTS SECTION */}
-      <div className="worked-with">
-        | Clients |
-        <div className="worked-icons">
-          <FcGoogle />
-          <img src="./react.svg" alt="" />
-          <img
-            src="https://www.primatv.ro/assets/imgs/logo-prima-hd-2.png"
-            alt=""
-          />
-        </div>
-      </div>
+              <button onClick={snapTo} className="snap">
+                I
+              </button>
+              <button onClick={snapToTwo} className="snap two">
+                II
+              </button>
+              <button onClick={snapToThree} className="snap three">
+                III
+              </button>
+              <Suspense fallback={<ImagePlaceholder id="image-placeholder" />}>
+                <FirstPage />
+              </Suspense>
+              <SecondPage visible={visible} ref={ref} />
+              <ThirdPage videoObj={videoObj} />
+              <Clients />
+            </Landing>
+          }
+        />
+        <Route
+          path="/blog"
+          element={
+            <Blog>
+              <Nav
+                text={""}
+                handleAbout={snapToTwo}
+                handleProjects={snapToThree}
+                handleContact={snapToFour}
+              ></Nav>
+            </Blog>
+          }
+        />
+      </Routes>
       <Footer></Footer>
     </>
   );

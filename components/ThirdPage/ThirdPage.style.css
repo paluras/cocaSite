@@ -38,44 +38,41 @@
     
   } */
 
-  .test-video{
-    width: 100%;
-    overflow-y: hidden;
-    position: relative; /* Add this to make positioning easier */
-    transition: opacity 0.3s ease-in-out;
-  }
-  .test-video::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Overlay color */
-    backdrop-filter: blur(5px); /* Blur effect */
-    opacity: 0; /* Initially hidden */
-    transition: opacity 0.3s ease-in-out;
-  }
-  .title {
-    position: absolute;
-    bottom: 44%; /* Adjust this to your preferred vertical position */
-    text-align: center;
-    opacity: 0;
-    cursor: pointer;
-    color: #fff;
-    font-size: 24px;
-    
-    transition: opacity 0.3s ease-in-out;
-    width: 100%;
-  }
- 
-  .test-video:hover::before {
-    opacity: 1;
-  }
+.test-video {
+  width: 100%;
+  overflow-y: hidden;
+  position: relative; /* Add this to make positioning easier */
+  transition: opacity 0.3s ease-in-out;
+}
+.test-video::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Overlay color */
+  backdrop-filter: blur(5px); /* Blur effect */
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease-in-out;
+}
+.title {
+  position: absolute;
+  bottom: 44%; /* Adjust this to your preferred vertical position */
+  text-align: center;
+  opacity: 0;
+  cursor: pointer;
+  color: #fff;
+  font-size: 24px;
 
+  transition: opacity 0.3s ease-in-out;
+  width: 100%;
+}
 
-  
- 
+.test-video:hover::before {
+  opacity: 1;
+}
+
 .video-container {
   display: grid;
   justify-content: center;
@@ -91,10 +88,6 @@
   overflow-y: hidden;
   transition: 0.5s linear;
 }
-
-
-
-
 
 .snap {
   cursor: pointer;
@@ -114,4 +107,31 @@
 }
 .three {
   top: 55%;
+}
+
+
+@media screen and (max-width: 500px) {
+ 
+  .work-title-container {
+  
+    font-size: 48px;
+    height: 100%;
+    width: 100%;
+   
+  }
+  .work-title {
+  
+    font-size: 48px;
+    
+   
+  }
+
+
+  .video-container {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(1, 80%);
+    gap: 15px;
+  }
+
 }

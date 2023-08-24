@@ -4,7 +4,7 @@ import "./ThirdPage.style.css";
 const ThirdPage = ({ videoObj }) => {
   const handleMouseEnter = (event) => {
     const video = event.target;
-    console.log(video);
+  
     const overlay = video.parentElement.querySelector(".video-overlay");
     const title = video.parentElement.querySelector(".title");
 
