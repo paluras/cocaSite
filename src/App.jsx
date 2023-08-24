@@ -1,7 +1,7 @@
 import Footer from "../components/footer/footer.component";
 import Nav from "../components/nav/nav-component";
 import "./App.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useInView } from "react-intersection-observer";
 
 import { FcGoogle } from "react-icons/fc";
@@ -13,28 +13,23 @@ import ImagePlaceholder from "../components/VideoPlaceholder/VideoPlaceHolder";
 
 function App() {
   const [visible, setVisible] = useState();
-  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+  // const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   const { ref, inView } = useInView({
     /* Optional options */
   });
 
-  useEffect(() => {
-    const videoElement = document.querySelector('video');
+  // useEffect(() => {
+  //   const videoElement = document.querySelector("video");
 
+  //   // Listen for the 'loadeddata' event to detect when the video is loaded
+  //   videoElement.addEventListener("loadeddata", () => {
+  //     setIsVideoLoaded(true);
+  //   });
 
-    // Listen for the 'loadeddata' event to detect when the video is loaded
-    videoElement.addEventListener('loadeddata', () => {
-      setIsVideoLoaded(true); 
-   
-    });
-    
-    // Simulate loading the video (replace this with your actual video URL)
-    // Replace with the path to your video
-  }, []);
+  //   // Simulate loading the video (replace this with your actual video URL)
+  //   // Replace with the path to your video
+  // }, []);
 
-
-
-  
   const snapTo = () => {
     const firstPage = document.getElementById("first");
     firstPage.scrollIntoView({
@@ -80,10 +75,14 @@ function App() {
       <button onClick={snapToThree} className="snap three">
         III
       </button>
-
+      
       <Nav handleAbout={snapToTwo} handleProjects={snapToThree}></Nav>
-     { isVideoLoaded ? <FirstPage /> : <ImagePlaceholder id="image-placeholder" /> }
-     {/* <ImagePlaceholder /> */}
+      <Suspense fallback={<ImagePlaceholder id="image-placeholder" />}>
+        <FirstPage />
+      </Suspense>
+      
+      {/* { isVideoLoaded ? : <ImagePlaceholder id="image-placeholder" /> } */}
+      {/* <ImagePlaceholder /> */}
       <SecondPage visible={visible} ref={ref} />
 
       <ThirdPage videoObj={videoObj} />
