@@ -43,6 +43,7 @@ const ThirdPage = ({ videoObj }) => {
                 className="small-video"
                 src={el}
                 autoPlay
+                playsInline
                 muted
                 loop
                 id={`myVideo-${index}`}

@@ -63,7 +63,7 @@ img {
   animation: fillAndRevert 2s ease-in-out infinite alternate;
 }
 .placeholder {
-  background-color: black;
+ 
   opacity: 1;
   transition: opacity 1s ease-in-out;
 }
