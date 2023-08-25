@@ -102,9 +102,10 @@ function App() {
               <button onClick={snapToThree} className="snap three">
                 III
               </button>
-              {/* <Suspense fallback={<ImagePlaceholder id="image-placeholder" />}> */}
+           
+              <Suspense fallback={<ImagePlaceholder id="image-placeholder" />}>
                 <FirstPage />
-              {/* </Suspense> */}
+              </Suspense>
               <SecondPage visible={visible} ref={ref} />
               <ThirdPage videoObj={videoObj} />
               <Clients />

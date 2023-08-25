@@ -19,13 +19,16 @@ const FirstPage = () => {
             </svg>
           </div>
           <div className="gradient"></div>{" "}
-          <video className="big-video" playsInline autoPlay muted loop id="myVideo">
-        
-            <source src="./var6.mp4" type="video/mp4"  />
-           
-            <source src="./var6mov.mp4" type="video/mp4" />
+          <video
+            className="big-video"
+            src="./var6.mp4"
+            playsInline
+            autoPlay
+            muted
+            loop
+            id="myVideo"
+          ></video>
           
-          </video>
         </div>
       </main>
     </>
