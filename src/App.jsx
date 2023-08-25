@@ -17,7 +17,20 @@ import Blog from "../route/Blog.component";
 function App() {
   const [visible, setVisible] = useState();
   const { ref, inView } = useInView({});
+  const [isVideoLoaded , setIsVideoLoaded] =useState(false)
+   
 
+ 
+
+  useEffect(()=>{
+    const videoElement = document.querySelector('video');
+    
+    videoElement.addEventListener('loadeddata', () => {
+      setIsVideoLoaded(true);
+
+    });
+  })
+      
 
   const snapTo = () => {
     const firstPage = document.getElementById("first");
@@ -102,10 +115,10 @@ function App() {
               <button onClick={snapToThree} className="snap three">
                 III
               </button>
-           
-              <Suspense fallback={<ImagePlaceholder id="image-placeholder" />}>
+           {isVideoLoaded? <FirstPage /> : <ImagePlaceholder id="image-placeholder" />}
+              {/* <Suspense fallback={<ImagePlaceholder id="image-placeholder" />}>
                 <FirstPage />
-              </Suspense>
+              </Suspense> */}
               <SecondPage visible={visible} ref={ref} />
               <ThirdPage videoObj={videoObj} />
               <Clients />
