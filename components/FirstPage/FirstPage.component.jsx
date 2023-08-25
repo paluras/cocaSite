@@ -10,6 +10,8 @@ const FirstPage = () => {
       setIsVideoLoaded("0");
     });
   });
+
+  isVideoLoaded == "0" ? console.log(true) : console.log(false);
   return (
     <>
       <main id="first" className="first-page">
