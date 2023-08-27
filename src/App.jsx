@@ -1,6 +1,6 @@
 import "./App.css";
 
-import { useState, useEffect, Suspense } from "react";
+import { useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import { Route, Routes } from "react-router-dom";
 
@@ -9,7 +9,6 @@ import Nav from "../components/nav/nav-component";
 import FirstPage from "../components/FirstPage/FirstPage.component";
 import SecondPage from "../components/SecondPage/SecondPage.component";
 import ThirdPage from "../components/ThirdPage/ThirdPage.component";
-import ImagePlaceholder from "../components/VideoPlaceholder/VideoPlaceHolder";
 import Landing from "../components/Landing/Landing.component";
 import Clients from "../components/Clients/Clients.component";
 import Blog from "../route/Blog.component";
@@ -17,20 +16,6 @@ import Blog from "../route/Blog.component";
 function App() {
   const [visible, setVisible] = useState();
   const { ref, inView } = useInView({});
-  // const [isVideoLoaded , setIsVideoLoaded] =useState(false)
-   
-
- 
-
-  // useEffect(()=>{
-  //   const videoElement = document.querySelector('video');
-    
-  //   videoElement.addEventListener('loadedata', () => {
-  //     setIsVideoLoaded(true);
-
-  //   });
-  // })
-      
 
   const snapTo = () => {
     const firstPage = document.getElementById("first");
@@ -72,26 +57,6 @@ function App() {
   ];
   const navObjText = ["About Us", "Projects", "Blog", "Contact"];
 
-
-
-
-  // Create a function to update the viewport width in the state
-  // const updateViewportWidth = () => {
-  //   setViewportWidth(window.innerWidth);
-  // };
-
-  // // Add an event listener to update the viewport width when the window is resized
-  // useEffect(() => {
-  //   window.addEventListener('resize', updateViewportWidth);
-
-  //   // Clean up the event listener when the component unmounts
-  //   return () => {
-  //     window.removeEventListener('resize', updateViewportWidth);
-  //   };
-  // }, []); // The empty dependency array means this effect runs only once after mounting
-
-  // console.log(viewportWidth);
-
   return (
     <>
       <Routes>
@@ -115,8 +80,8 @@ function App() {
               <button onClick={snapToThree} className="snap three">
                 III
               </button>
-           <FirstPage /> 
-             
+              <FirstPage />
+
               <SecondPage visible={visible} ref={ref} />
               <ThirdPage videoObj={videoObj} />
               <Clients />

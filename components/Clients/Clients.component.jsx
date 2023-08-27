@@ -1,4 +1,4 @@
-import { FcGoogle } from "react-icons/fc";
+
 
 const Clients = () =>{
     return (
@@ -6,12 +6,15 @@ const Clients = () =>{
          <div className="worked-with">
         | Clients |
         <div className="worked-icons">
-          <FcGoogle />
-          <img src="./react.svg" alt="" />
+      
+          <a href="https://www.facebook.com/fundatiatineret.tulcea/?locale=ro_RO"><img src="./FJT.jpg" alt="" /></a>
+          
+          <a href="https://www.eematico.org/">
           <img
-            src="https://www.primatv.ro/assets/imgs/logo-prima-hd-2.png"
+            src="./eematico_logo.png"
             alt=""
           />
+          </a>
         </div>
       </div>
         </>
