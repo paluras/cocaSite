@@ -40,8 +40,10 @@ a{
 
 .right-container-mobile{
   display: flex;
-  
-  gap: 30px;
+  flex-direction: column;
+  justify-content: end;
+  align-items: end;
+ 
   color: white;
   right: 0;
 }
@@ -60,9 +62,15 @@ a{
   top: 30px;
 }
 .list{
+  display: grid;
+
   position: relative;
   color: white;
+  transition: grid-template-rows ease-in 300ms;
 }
+
+
+
 li{
 text-align: end;
 padding: 10px 0 0 0;

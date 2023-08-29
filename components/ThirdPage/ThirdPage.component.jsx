@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./ThirdPage.style.css";
 
 // eslint-disable-next-line react/prop-types
@@ -41,7 +42,7 @@ const ThirdPage = ({ videoObj }) => {
             >
               <video
                 className="small-video"
-                src={el}
+                src={el.src}
                 autoPlay
                 playsInline
                 muted
@@ -49,7 +50,8 @@ const ThirdPage = ({ videoObj }) => {
                 id={`myVideo-${index}`}
               ></video>
               <div className="video-overlay"></div>
-              <a className="title">Pe Faleza - Coca Andrei</a>
+              <Link className="title" to={el.linkTo}> {el.title}</Link>
+              
             </div>
           ))}
         </div>

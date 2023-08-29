@@ -1,0 +1,26 @@
+
+.video-page-main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   
+    
+}
+.title-video{
+    color: white;
+    margin: 0 auto;
+    width: 80%;
+
+}
+
+.video-page{
+    width: 70%;
+    
+    margin: 100px auto 0 auto;
+}
+
+.video-description{
+    color: white;
+    margin: 25px auto 75px ;
+    width: 80%;
+}
