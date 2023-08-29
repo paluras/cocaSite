@@ -33,7 +33,7 @@ body {
   background-color: black;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+ 
   align-items: center;
   color: white;
   color: white;
@@ -87,21 +87,12 @@ img {
 }
 
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 750px) {
  
   .worked-with {
-    height: 40vh;
-    background-color: black;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    color: white;
+    height: 30vh;
     font-size: 48px;
-    font-weight: 700;
-    text-align: center;
-    gap: 50px;
+
   }
   
   .worked-icons {
@@ -112,7 +103,7 @@ img {
   img {
     color: white;
     width:75px;
-    height: 45px;
+    height: 60px;
     object-fit: contain;
   }
 
