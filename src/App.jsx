@@ -122,7 +122,7 @@ function App() {
           element={
             <Blog>
               <Nav
-                text={"Back"}
+                text={["Go Back"]}
                 handleAbout={snapToTwo}
                 handleProjects={snapToThree}
                 handleContact={snapToFour}
