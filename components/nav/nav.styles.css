@@ -30,13 +30,19 @@ a{
 }
 
 .right-container-nav{
+    
+    
     display: flex;
-   
-    gap: 30px;
+    gap: 10px;
     color: white;
    
     
 }
+
+
+
+
+
 
 .right-container-mobile{
   display: flex;
