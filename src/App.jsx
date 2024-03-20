@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import { Route, Routes, useLocation } from "react-router-dom";
 
+import MouseFollower from "../components/mouseFollow";
 import Footer from "../components/footer/footer.component";
 import Nav from "../components/nav/nav-component";
 import FirstPage from "../components/firstPage/index";
@@ -54,6 +55,7 @@ function App() {
 
   return (
     <>
+    {/* <MouseFollower/> */}
       <Routes>
         <Route
           path="/"
