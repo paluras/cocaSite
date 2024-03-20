@@ -1,11 +1,22 @@
+
+@font-face {
+  font-family: Cocogoose-Light ;
+  src: url(/font/CocogooseCondensed-UltraLight.woff2);
+}
+
 * {
+    scroll-behavior: smooth;
   border: 0px;
   margin: 0px;
-  font-family: "Titillium Web", sans-serif;
+  font-family: Cocogoose-Light, sans-serif;
 
   -ms-overflow-style: none;
   scrollbar-width: none;
   overflow-y: scroll;
+}
+h1{
+  margin: 10px 0;
+  font-size: 32px;
 }
 body {
   background-color: black;
@@ -49,9 +60,7 @@ body {
 }
 .worked-icons > svg,
 img {
-  color: white;
-  width: 150px;
-  height: 80px;
+
   object-fit: contain;
 }
 

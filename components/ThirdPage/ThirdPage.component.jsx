@@ -27,10 +27,10 @@ const ThirdPage = ({ videoObj }) => {
   };
 
   return (
-    <main className="third-page">
+    <section id="third" className="third-page">
       <div className="our-work">
         <div className="work-title-container">
-          <div className="work-title">| Work |</div>
+          <div className="work-title">Proiecte</div>
         </div>
         <div className="video-container">
           {videoObj.map((el, index) => (
@@ -56,7 +56,7 @@ const ThirdPage = ({ videoObj }) => {
           ))}
         </div>
       </div>
-    </main>
+    </section>
   );
 };
 

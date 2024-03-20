@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 const Landing = ({ children }) => {
-  return <>{children}</>;
+  return <main>{children}</main>;
 };
 
 export default Landing;
