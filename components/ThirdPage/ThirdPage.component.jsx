@@ -5,7 +5,7 @@ import "./ThirdPage.style.css";
 const ThirdPage = ({ videoObj }) => {
   const handleMouseEnter = (event) => {
     const video = event.target;
-  
+
     const overlay = video.parentElement.querySelector(".video-overlay");
     const title = video.parentElement.querySelector(".title");
 
@@ -50,8 +50,11 @@ const ThirdPage = ({ videoObj }) => {
                 id={`myVideo-${index}`}
               ></video>
               <div className="video-overlay"></div>
-              <Link className="title" to={el.linkTo}> {el.title}</Link>
-              
+              <Link className="title" to={el.linkTo}>
+                
+                <img  src={el.url} alt={el.title} />
+                {el.title}
+              </Link>
             </div>
           ))}
         </div>

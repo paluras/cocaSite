@@ -38,15 +38,17 @@ function App() {
   const videoObj = [
     {
       src: "./var6.mp4",
-      title: "Zahar face televizor",
+      title: "Numaru N",
       para: "The Golden Globe Awards are accolades bestowed, for excellence in both American and international film and television, by the Hollywood Foreign Press Association (HFPA), an organization representing international journalists who reported on the American entertainment industry. It is an annual award ceremony held since 1944 to honor artists and professionals and their work.",
       linkTo: "page",
+      url:"./n_logo.png"
     },
     {
       src: "./video2vsmall.mp4",
-      title: "Babababa",
+      title: "Camera Oranj",
       para: "Ingrid Bergman (n. 29 august 1915, Stockholm, Suedia - d. 29 august 1982, Londra, Marea Britanie) a fost o actriță de film, de origine suedeză, laureată cu trei premii Oscar, laureată a triplei recunoașteri filmice numită Triple Crown of Acting, o categorie aparte pentru actorii și actrițele care sunt câștigători ai premiilor Oscar, Tony și Emmy.",
       linkTo: "page2",
+      url:"./camera_oranje.png"
     },
   ];
 
