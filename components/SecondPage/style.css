@@ -67,6 +67,7 @@
     width:calc(100% - 40px) ;
   
   }
+  
   .big-tittles {
     display: flex;
     justify-content: center;
@@ -77,6 +78,12 @@
   .text-about {
     font-size: 16px;
     height: 100%;
+  }
+  .about-us-container.two-section {
+    display: flex;
+    margin-left: auto;
+    align-items: start;
+    transition-delay: 200ms;
   }
 
 
