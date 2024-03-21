@@ -124,5 +124,8 @@ body {
     height: 60px;
     object-fit: contain;
   }
+  .big-title{
+    font-size: 48px;
+  }
 
 }
