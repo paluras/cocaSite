@@ -1,0 +1,13 @@
+.mouse-circle {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px; /* Adjust size as needed */
+    height: 100px; /* Adjust size as needed */
+    border: 2px solid #ffffff85; /* Style the border as you like */
+    color: rgba(255, 255, 255, 0.589);
+    border-radius: 50%; /* This makes it round */
+    pointer-events: none; /* Ignore mouse events */
+    transform: translate(-50%, -50%); /* Center the circle on the cursor */
+  }

@@ -1,18 +1,12 @@
 import "./App.css";
 
-import { useState, useEffect } from "react";
-import { useInView } from "react-intersection-observer";
 import { Route, Routes, useLocation } from "react-router-dom";
-
+import { useEffect } from "react";
 import Footer from "../components/footer/footer.component";
 import Nav from "../components/nav/nav-component";
-import FirstPage from "../components/firstPage/index";
-import SecondPage from "../components/SecondPage/index";
-import ThirdPage from "../components/ThirdPage/ThirdPage.component";
-import Landing from "../components/Landing/Landing.component";
-import Clients from "../components/Clients/Clients.component";
+import Landing from "../components/landing/index.jsx";
 import Blog from "../route/Blog.component";
-import PageVideo from "../components/PageVideo/PageVideo.component";
+import PageVideo from "../components/nav/pageVideo/index.jsx";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -25,64 +19,49 @@ function ScrollToTop() {
 }
 
 function App() {
-  const [visible, setVisible] = useState();
-  const { ref, inView } = useInView({});
-
-
-
-  useEffect(() => {
-    inView ? setVisible("show") : setVisible("hidden");
-    return () => {};
-  }, [inView]);
+  const navObj = [
+    { text: "Despre Noi", to: "/#second" },
+    { text: "Proiecte", to: "#third" },
+    { text: "Articole", to: "/blog" },
+    { text: "Echipa", to: "" },
+    { text: "Contact", to: "#footer" },
+  ];
 
   const videoObj = [
     {
-      src: "./var6.mp4",
+      src: "./var6mov.mp4",
       title: "Numaru N",
-      para: "The Golden Globe Awards are accolades bestowed, for excellence in both American and international film and television, by the Hollywood Foreign Press Association (HFPA), an organization representing international journalists who reported on the American entertainment industry. It is an annual award ceremony held since 1944 to honor artists and professionals and their work.",
+      para: [
+        "Proiectul “Numarul N” se naste din dorinta de a pune in valoare meseriile facute de oameni pasionati si dedicati. Multe intalniri ocazionale cu diversi profesionisti ne-au pus in contexte inedite care nu puteau fi pastrate doar pentru noi. Si iata, aceasta serie de mini- documentare ce au in prim-plan munca cu toate partile bune sau mai putin bune, urmareste oameni care nu au doua instante: Omul profesionist si omul in timpul liber.Am reusit sa descoperim oameni care se definesc prin meseria lor.",
+        "Numarul N este inspirat din faptul ca multe pravalii sunt mici, cu numar la poarta, care uneori se confunda printre multele numere ale strazilor. Se pot trece cu vederea. Dar intrand in fiecare spatiu prezentat de noi, descoperi dimensiuni in totala contradictie cu cele fizice. ",
+        "Urmareste si mergi la ei. Sustine pravaliile mici.",
+      ],
       linkTo: "page",
-      url:"./n_logo.png"
+      url: "./n_logo.png",
     },
     {
       src: "./video2vsmall.mp4",
       title: "Camera Oranj",
-      para: "Ingrid Bergman (n. 29 august 1915, Stockholm, Suedia - d. 29 august 1982, Londra, Marea Britanie) a fost o actriță de film, de origine suedeză, laureată cu trei premii Oscar, laureată a triplei recunoașteri filmice numită Triple Crown of Acting, o categorie aparte pentru actorii și actrițele care sunt câștigători ai premiilor Oscar, Tony și Emmy.",
+      para: [
+        "Spatiul online nu are filtre. Suntem inconjurati de medii digitale in fiecare proiect, moment sau activitate si de multe ori picam in hipnotismul lor.",
+        "Camera Oranj se naste din dorinta de a oferii cateva notiuni, credem noi, importante pentru a putea naviga, participa si creste in aceste medii dar si abilitatea de a deveni creator parte dintr-un val de modelare a continutului. Cursul vine structurat in 8 lectii care vor acoperi notiuni despre foto-video, marketing, planificare, iar la final, participantul sa ramana cu abilitati clare in producerea continutului in toate formele lui.",
+        "Ne dorim ca cei ce aduc aportul la mediile online, sa o faca constient intelegand intregul mecanism din spate. Afara de importanta directa in aportul participantilor la “internet”, cursul Camera Oranj doreste sa puna accent pe observarea si valorizarea mediului inconjurator.",
+        "Perspectiva ta asupra lumii este unica, iar noi, spectatorii meritam sa o vedem.",
+      ],
       linkTo: "page2",
-      url:"./camera_oranje.png"
+      url: "./camera_oranje.png",
     },
   ];
-
-  const navObjText = ["Despre Noi", "Proiecte", "Blog", "Echipa", "Contact"];
-
   return (
     <>
-    {/* <MouseFollower/> */}
+      {/* <MouseFollower/> */}
       <Routes>
         <Route
           path="/"
           element={
             <>
-              <Nav
-                text={navObjText}
-            
-              ></Nav>
-              <Landing>
-                <a href="#first">
-                  <button className="snap">I </button>
-                </a>
-
-                <a href="#second">
-                  <button className="snap two">II </button>
-                </a>
-                <a href="#third">
-                  <button className="snap three">III </button>
-                </a>
-                <FirstPage />
-
-                <SecondPage visible={visible} ref={ref} />
-                <ThirdPage videoObj={videoObj} />
-                <Clients />
-              </Landing>
+              <Nav text={navObj}></Nav>
+              <Landing videoObj={videoObj}></Landing>
             </>
           }
         />
@@ -90,10 +69,7 @@ function App() {
           path="/blog"
           element={
             <Blog>
-              <Nav
-                text={["Go Back"]}
-             
-              ></Nav>
+              <Nav text={navObj}></Nav>
             </Blog>
           }
         />
@@ -108,11 +84,9 @@ function App() {
                   src={element.src}
                   title={element.title}
                   p={element.para}
+                  url={element.url}
                 >
-                  <Nav
-                    text={["Go Back"]}
-                
-                  ></Nav>
+                  <Nav text={navObj}></Nav>
                 </PageVideo>
               </>
             }

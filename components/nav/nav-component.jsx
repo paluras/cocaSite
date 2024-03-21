@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useEffect } from "react";
 
 // eslint-disable-next-line react/prop-types
-function Nav({ handleAbout, handleProjects, handleContact, text }) {
+function Nav({ text }) {
   const [pop, setPop] = useState(true);
   const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
   const [gridAnim, setGridAnim] = useState("0fr");
@@ -43,22 +43,11 @@ function Nav({ handleAbout, handleProjects, handleContact, text }) {
           </div>
           {viewportWidth > 500 ? (
             <div className="right-container-nav">
-              <div className="nav-menu">
-              <a href="#second">{text[0]}</a>
-              </div>
-              <div className="nav-menu">
-                <a href="#third">{text[1]}</a>
-              </div>
-              <div className="nav-menu">
-                <Link to={"/blog"}>{text[2]}</Link>
-              </div>
-
-              <div className="nav-menu">
-                <a >{text[3]}</a>
-              </div>
-              <div className="nav-menu">
-                <a href="#footer">{text[4]}</a>
-              </div>
+              {text.map((item , index) => (
+                <div key={index} className="nav-menu">
+                  <a href={item.to}>{item.text}</a>
+                </div>
+              ))}
             </div>
           ) : (
             <div className="right-container-mobile">
@@ -95,23 +84,11 @@ function Nav({ handleAbout, handleProjects, handleContact, text }) {
               )}
               <div style={{ gridTemplateRows: `${gridAnim}` }} className="list">
                 <ul>
-                  <li>
-                    <a >{text[0]}</a>
-                  </li>
-                  <li>
-                    <a >{text[1]}</a>
-                  </li>
-                  <li>
-                    <Link to={"/blog"}>{text[2]}</Link>
-                  </li>
-                  <li>
-                    {" "}
-                    <a >{text[3]}</a>
-                  </li>
-                  <li>
-                    {" "}
-                    <a >{text[4]}</a>
-                  </li>
+                  {text.map((item, index) => (
+                    <li key={index}>
+                      <a href={item.to}>{item.text}</a>
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>

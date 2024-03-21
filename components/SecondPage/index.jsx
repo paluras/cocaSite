@@ -7,33 +7,34 @@ const SecondPage = forwardRef(function SecondPage({ visible }, ref) {
     <section id="second" className="second-page">
       <div className="about-us">
         <div className={`hidden about-us-container one-section ${visible}`}>
-          <h1 className="big-titles">Viziunea Noastră</h1>
+          <h1 className="big-titles">Eliberează-ți creativitatea</h1>
           <p className="text-about">
-            Transformăm povești în realitate vizuală memorabilă, de la idee la
-            produsul final. Indiferent de provocare, de la imagini de înaltă
-            calitate la strategii de marketing eficiente, ne asigurăm că fiecare
-            cadru conectează și emoționează.
+            Si regăsește-ți identitatea în fiecare cadru. Fie ca esti un
+            antreprenor care isi doreste sa se afirme in spatiul online, fie ca
+            esti o persoana care are o idee minunata dar nu stie cum sa o puna
+            in aplicare, noi putem pune asta in imagini.
           </p>
         </div>
         <div
           ref={ref}
           className={`hidden about-us-container two-section ${visible}`}
         >
-          <h1  className="big-titles">Expertiza Noastră</h1>
+          <h1 className="big-titles">
+            Exploreaza și îmbrățișează autenticitatea ta în fiecare producție.
+          </h1>
           <p className="text-about">
-            Combinăm tehnologie de ultimă oră cu creativitate nelimitată pentru
-            a produce videouri care povestesc, emoționează și motivează. Suntem
-            dedicați să aducem la viață viziuni îndrăznețe, oferind strategii de
-            marketing vizual personalizate.
+            Oferim un cadru care nu face altceva decat sa amplifice viziunea ta
+            dar si modul tau unic si autentic de a exista in societate (dpdv
+            profesional dar si personal).
           </p>
         </div>
         <div className={`hidden about-us-container three-section ${visible}`}>
-          <h1 className="big-titles">Realizările Noastre</h1>
+          <h1 className="big-titles">
+            Înțelege-ți esența artistică și regăsește-ți propriul stil
+          </h1>
           <p className="text-about">
-            Ne aventurăm cu pasiune în fiecare proiect, depășind constant
-            limitele pentru a atinge excelența. Măsurăm succesul prin impactul
-            creat și prin poveștile de succes realizate împreună cu clienții
-            noștri, transformând viziuni în realități impresionante.
+            Suntem alaturi la fiecare pas pentru a intelege si asuma stilul tau
+            propriu. Cladim pe ce ai deja si punem in valoare toate calitatile.
           </p>
         </div>
       </div>
