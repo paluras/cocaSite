@@ -23,7 +23,7 @@ function App() {
     { text: "Despre Noi", to: "/#second" },
     { text: "Proiecte", to: "#third" },
     { text: "Articole", to: "/blog" },
-    { text: "Echipa", to: "" },
+    { text: "Echipa", to: "#team" },
     { text: "Contact", to: "#footer" },
   ];
 
