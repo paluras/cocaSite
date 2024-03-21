@@ -34,14 +34,21 @@ body {
   top: 45%;
   right: 10px;
   background-color: rgba(255, 255, 255, 0.103);
-
   color: white;
   border: 2px solid rgba(90, 89, 89, 0.226);
+}
+.big-title{
+  color: white;
+  display: flex;
+  justify-content: center;
+  font-size: 60px;
+  font-weight: 700;
+  text-align: center;
+  padding: 50px 0;
 }
 
 .worked-with {
 
-  background-color: black;
   display: flex;
   flex-direction: column;
  
@@ -51,18 +58,21 @@ body {
   font-weight: 700;
   text-align: center;
   gap: 50px;
-  margin-bottom: 100px;
 }
+
 
 .worked-icons {
   display: flex;
+  height: 20vh;
+  align-items: center;
   gap: 20px;
 }
-.worked-icons > svg,
-img {
+.worked-icons > svg + img {
 
   object-fit: contain;
+ 
 }
+
 
 /* PLace Holder */
 
@@ -108,8 +118,7 @@ img {
     display: flex;
     gap: 20px;
   }
-  .worked-icons > svg,
-  img {
+  .worked-icons > svg + img {
     color: white;
     width:75px;
     height: 60px;

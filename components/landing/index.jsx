@@ -1,11 +1,10 @@
-/* eslint-disable react/prop-types */
-
-import FirstPage from "../firstPage";
-import SecondPage from "../nav/secondPage";
-import ThirdPage from "../thirdPage";
-import Clients from "../clients";
+import FirstPage from "./firstPage";
+import SecondPage from "./secondPage";
+import ThirdPage from "./thirdPage";
+import Clients from "./clients";
 import { useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
+import Team from "./team";
 
 const Landing = ({ videoObj }) => {
   const [visible, setVisible] = useState();
@@ -31,6 +30,8 @@ const Landing = ({ videoObj }) => {
       <SecondPage visible={visible} ref={ref} />
       <ThirdPage videoObj={videoObj} />
       <Clients />
+      <div className="big-title">Echipa</div>
+      <Team />
     </main>
   );
 };

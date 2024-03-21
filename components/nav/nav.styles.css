@@ -19,8 +19,7 @@ a:hover {
   text-decoration-color: rgb(255, 255, 255);
 }
 
-.left-container-nav > a,
-img {
+.left-container-nav > a > img {
   width: auto;
   height: 20px;
 }

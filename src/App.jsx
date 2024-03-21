@@ -6,7 +6,7 @@ import Footer from "../components/footer/footer.component";
 import Nav from "../components/nav/nav-component";
 import Landing from "../components/landing/index.jsx";
 import Blog from "../route/Blog.component";
-import PageVideo from "../components/nav/pageVideo/index.jsx";
+import PageVideo from "../components/pageVideo/index.jsx";
 
 function ScrollToTop() {
   const { pathname } = useLocation();

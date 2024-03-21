@@ -1,0 +1,52 @@
+
+.icon-absolute{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+
+     & img{
+      width: 500px;
+      height: 500px;
+      padding: 50px;
+      object-fit: contain;
+     
+     }
+  }
+ 
+  .absolute-cover{
+    position: absolute;
+    background-color: black;
+    height: 100vh;
+    width: 100vw;
+    transition: opacity 1s;
+  }
+  
+  .gradient {
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(
+      180deg,
+      rgba(2, 0, 36, 0) 77%,
+      rgba(0, 0, 0, 1) 100%
+    );
+  }
+  .video-land {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+  }
+  .big-video {
+    object-fit: cover;
+    height: 100vh;
+    width: 100vw;
+   
+  }
