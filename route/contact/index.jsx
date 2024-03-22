@@ -92,22 +92,14 @@ const Contact = () => {
               name="message"
               required
             />
-            <label style={{
-                display:"grid",
-                gridTemplateColumns:"60% 20px",
-                alignItems:"center",
-                
-                color:"grey",
-                fontSize:"16px"
-                
-            }} htmlFor="">
+            <label  className="require"  htmlFor="check">
               Confidențialitatea dumneavoastră este importantă pentru noi.
               Informațiile pe care le trimiteți prin acest formular vor fi
               folosite doar pentru a vă contacta în răspuns la solicitarea
               dumneavoastră. Prin trimiterea detaliilor dumneavoastră, sunteți
               de acord cu utilizarea informațiilor dumneavoastră în acest scop.
            
-            <input required type="checkbox" name="" id="" />
+            <input required type="checkbox" name="check" id="check" />
             </label>
             <button type="submit">Trimite</button>
           </form>

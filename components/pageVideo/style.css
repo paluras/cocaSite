@@ -20,7 +20,8 @@
   & video {
     border-radius: 10px;
     box-shadow: 1px 4px 10px rgba(121, 111, 111, 0.534);
-    min-height: calc(95% - 64px);
+    width: 80%;
+   
     object-fit: cover;
     cursor: pointer;
    
@@ -36,7 +37,8 @@
   background-color: rgb(0, 0, 0);
   padding: 20px 0px;
   border-radius: 10px;
-  width: 90%;
+  width: 80%;
+
   margin-bottom: 10vh;
 }
 
@@ -58,4 +60,18 @@
   .text-container {
     width: 90%;
   }
+  .video-elements{
+    & video{
+      width: 90%;
+    }
+  }
+ 
+}
+
+@media screen and (max-width: 700px) {
+  .project-logo{
+    height: 40px;
+  }
+ 
+ 
 }

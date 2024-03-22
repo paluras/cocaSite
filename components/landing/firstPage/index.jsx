@@ -26,7 +26,7 @@ const FirstPage = () => {
           <div className="gradient"></div>{" "}
           <video
             className="big-video"
-            src="./var6.mp4"
+            src="./numaru_n_video.webm"
             playsInline
             autoPlay
             muted
