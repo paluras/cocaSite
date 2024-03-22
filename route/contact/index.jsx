@@ -60,6 +60,12 @@ const Contact = () => {
             Daca ai o intrebare , trimite-ne un mesaj si revenim cu un raspuns
             cat se poate de repede
           </p>
+          <br />
+          <p>
+            Trimite mail direct la :<a> office@cocaproduction.com</a>
+          </p>
+          <br />
+          <p>Sau completeaza formularul:</p>
           <form ref={form} onSubmit={sendEmail}>
             <label htmlFor="name">Nume</label>
             <input
@@ -86,6 +92,23 @@ const Contact = () => {
               name="message"
               required
             />
+            <label style={{
+                display:"grid",
+                gridTemplateColumns:"60% 20px",
+                alignItems:"center",
+                
+                color:"grey",
+                fontSize:"16px"
+                
+            }} htmlFor="">
+              Confidențialitatea dumneavoastră este importantă pentru noi.
+              Informațiile pe care le trimiteți prin acest formular vor fi
+              folosite doar pentru a vă contacta în răspuns la solicitarea
+              dumneavoastră. Prin trimiterea detaliilor dumneavoastră, sunteți
+              de acord cu utilizarea informațiilor dumneavoastră în acest scop.
+           
+            <input required type="checkbox" name="" id="" />
+            </label>
             <button type="submit">Trimite</button>
           </form>
         </div>
