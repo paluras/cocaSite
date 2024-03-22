@@ -9,7 +9,7 @@
   border: 0px;
   margin: 0px;
   font-family: Cocogoose-Light, sans-serif;
-
+  color: white;
   -ms-overflow-style: none;
   scrollbar-width: none;
   overflow-y: scroll;
@@ -17,6 +17,7 @@
 h1{
   margin: 10px 0;
   font-size: 32px;
+  color: white;
 }
 body {
   background-color: black;

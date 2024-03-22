@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import "./Blog.style.css";
+import "./style.css";
 import { onSnapshot } from "firebase/firestore";
-import { notesCollection } from "../firebase";
+import { notesCollection } from "../../firebase";
 
 const Blog = ({ children }) => {
   const [blogData, setBlogData] = useState([]);

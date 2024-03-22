@@ -1,0 +1,33 @@
+.worked-with {
+  display: flex;
+  flex-direction: column;
+  height: 20vh;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 60px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.worked-icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.worked-icons > svg + img {
+  object-fit: contain;
+}
+
+@media screen and (max-width: 750px) {
+  .worked-icons {
+    display: flex;
+    gap: 20px;
+  }
+  .worked-icons > svg + img {
+    color: white;
+    width: 75px;
+    height: 60px;
+    object-fit: contain;
+  }
+}

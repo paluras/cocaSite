@@ -27,8 +27,13 @@ const Landing = ({ videoObj }) => {
         <button className="snap three">III </button>
       </a>
       <FirstPage />
+
       <SecondPage visible={visible} ref={ref} />
+      <div className="big-title">Proiecte</div>
+
       <ThirdPage videoObj={videoObj} />
+      <div className="big-title">Clienti</div>
+
       <Clients />
       <div className="big-title">Echipa</div>
       <Team />

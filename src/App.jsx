@@ -5,8 +5,9 @@ import { useEffect } from "react";
 import Footer from "../components/footer/footer.component";
 import Nav from "../components/nav/nav-component";
 import Landing from "../components/landing/index.jsx";
-import Blog from "../route/Blog.component";
+import Blog from "../route/articles/index.jsx";
 import PageVideo from "../components/pageVideo/index.jsx";
+import Contact from "../route/contact/index.jsx";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -24,7 +25,7 @@ function App() {
     { text: "Proiecte", to: "#third" },
     { text: "Articole", to: "/blog" },
     { text: "Echipa", to: "#team" },
-    { text: "Contact", to: "#footer" },
+    { text: "Contact", to: "/contact" },
   ];
 
   const videoObj = [
@@ -55,24 +56,12 @@ function App() {
   return (
     <>
       {/* <MouseFollower/> */}
+      <Nav text={navObj}></Nav>
+
       <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <Nav text={navObj}></Nav>
-              <Landing videoObj={videoObj}></Landing>
-            </>
-          }
-        />
-        <Route
-          path="/blog"
-          element={
-            <Blog>
-              <Nav text={navObj}></Nav>
-            </Blog>
-          }
-        />
+        <Route path="/" element={<Landing videoObj={videoObj}></Landing>} />
+        <Route path="/blog" element={<Blog></Blog>} />
+        <Route path="/contact" element={<Contact />} />
         {videoObj.map((element, index) => (
           <Route
             key={index}
@@ -85,14 +74,14 @@ function App() {
                   title={element.title}
                   p={element.para}
                   url={element.url}
-                >
-                  <Nav text={navObj}></Nav>
-                </PageVideo>
+                ></PageVideo>
               </>
             }
           />
         ))}
       </Routes>
+      
+
       <Footer></Footer>
     </>
   );

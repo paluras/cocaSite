@@ -20,7 +20,7 @@ const SecondPage = forwardRef(function SecondPage({ visible }, ref) {
           className={`hidden about-us-container two-section ${visible}`}
         >
           <h1 className="big-titles">
-            Exploreaza și îmbrățișează autenticitatea ta în fiecare producție.
+            Exploreaza autenticitatea.
           </h1>
           <p className="text-about">
             Oferim un cadru care nu face altceva decat sa amplifice viziunea ta
@@ -30,7 +30,7 @@ const SecondPage = forwardRef(function SecondPage({ visible }, ref) {
         </div>
         <div className={`hidden about-us-container three-section ${visible}`}>
           <h1 className="big-titles">
-            Înțelege-ți esența artistică și regăsește-ți propriul stil
+            Regăsește-ți propriul stil
           </h1>
           <p className="text-about">
             Suntem alaturi la fiecare pas pentru a intelege si asuma stilul tau

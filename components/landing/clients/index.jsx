@@ -1,8 +1,9 @@
+import "./style.css"
+
 const Clients = () => {
   return (
     <>
       <div className="worked-with">
-        Clienti
         <div className="worked-icons">
           <a href="https://www.facebook.com/fundatiatineret.tulcea/?locale=ro_RO">
             <img
@@ -34,7 +35,6 @@ const Clients = () => {
             />
           </a>
         </div>
-       
       </div>
     </>
   );

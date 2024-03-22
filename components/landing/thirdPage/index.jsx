@@ -16,10 +16,10 @@ const ThirdPage = ({ videoObj }) => {
   };
 
   const handleMouseLeave = (event) => {
+  
     const video = event.target;
     const overlay = video.parentElement.querySelector(".video-overlay");
     const title = video.parentElement.querySelector(".title");
-
     if (overlay.style.opacity == "0") {
       overlay.style.opacity = "0";
       title.style.opacity = "0";
@@ -30,7 +30,6 @@ const ThirdPage = ({ videoObj }) => {
     <section id="third" className="third-page">
       <div className="our-work">
         <div className="work-title-container">
-          <div className="work-title">Proiecte</div>
         </div>
         <div className="video-container">
           {videoObj.map((el, index) => (
