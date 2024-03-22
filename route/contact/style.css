@@ -26,7 +26,6 @@ textarea {
   color: black;
   resize: none;
   padding: 10px;
-    
 }
 
 button {
@@ -43,19 +42,16 @@ button:hover {
   transform: scaleY(1.1);
 }
 
-.socials{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.socials {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 
-        & h2{
-            color: grey;
-        }
+  & h2 {
+    color: grey;
+  }
 
-        & .socials-container > a{
-            padding-right: 10px;
-        }
-
-
-
+  & .socials-container > a {
+    padding-right: 10px;
+  }
 }
