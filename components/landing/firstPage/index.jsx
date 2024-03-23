@@ -22,17 +22,20 @@ const FirstPage = () => {
               alt="Logo for Coca Production"
             />
           </div>
-          
           <div className="gradient"></div>{" "}
           <video
+            preload="true"
             className="big-video"
-            src="./numaru_n_video.webm"
             playsInline
             autoPlay
             muted
             loop
             id="myVideo"
-          ></video>
+          >  <source src="./land_video_big.webm" />
+            <source src="./land_video.webm" />
+
+          
+          </video>
         </div>
       </section>
     </>

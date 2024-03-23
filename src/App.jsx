@@ -30,7 +30,7 @@ function App() {
 
   const videoObj = [
     {
-      src: "./numaru_n_video.webm",
+      src:  "./land_video.webm",
       title: "Numaru N",
       para: [
         "Proiectul “Numarul N” se naste din dorinta de a pune in valoare meseriile facute de oameni pasionati si dedicati. Multe intalniri ocazionale cu diversi profesionisti ne-au pus in contexte inedite care nu puteau fi pastrate doar pentru noi. Si iata, aceasta serie de mini- documentare ce au in prim-plan munca cu toate partile bune sau mai putin bune, urmareste oameni care nu au doua instante: Omul profesionist si omul in timpul liber.Am reusit sa descoperim oameni care se definesc prin meseria lor.",
@@ -41,7 +41,7 @@ function App() {
       url: "./n_logo.png",
     },
     {
-      src: "./video2vsmall.mp4",
+      src: "./land_video.webm",
       title: "Camera Oranj",
       para: [
         "Spatiul online nu are filtre. Suntem inconjurati de medii digitale in fiecare proiect, moment sau activitate si de multe ori picam in hipnotismul lor.",

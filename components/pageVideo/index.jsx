@@ -2,6 +2,7 @@ import React, { useRef } from 'react'; // Import useRef from React
 import "./style.css";
 import MouseFollower from "../mouseFollow";
 
+
 const PageVideo = ({ children, src, p, title, url }) => {
   const videoRef = useRef(null); // Create a reference to the video
 
@@ -21,13 +22,12 @@ const PageVideo = ({ children, src, p, title, url }) => {
           {/* Add a reference to the video and an onClick event listener */}
           <video
             ref={videoRef}
-            src={src}
             playsInline
             autoPlay
             muted
             loop
             onClick={toggleMute} // Add the onClick event listener here
-          ></video>
+          ><source src={src}  /></video>
           <img className="project-logo" src={url} alt={title} />
         </div>
         <div className="text-container">
