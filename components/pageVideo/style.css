@@ -17,6 +17,8 @@
   justify-content: center;
   position: relative;
   overflow-y: visible;
+  width: 90%;
+  
   & video {
     border-radius: 10px;
     box-shadow: 1px 4px 10px rgba(121, 111, 111, 0.534);
@@ -37,7 +39,7 @@
   background-color: rgb(0, 0, 0);
   padding: 20px 0px;
   border-radius: 10px;
-  width: 80%;
+  width: 72%;
 
   margin-bottom: 10vh;
 }
@@ -58,12 +60,11 @@
 
 @media screen and (max-width: 1000px) {
   .text-container {
-    width: 90%;
+    width: 72%;
   }
   .video-elements{
-    & video{
-      width: 90%;
-    }
+    width: 90%;
+   
   }
  
 }
