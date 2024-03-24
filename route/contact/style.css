@@ -69,3 +69,9 @@ font-Size:16px;
         grid-template-columns: 90% 20px;
     }
 }
+
+@media screen and (min-width:1000px) {
+form{
+  width: 70%;
+}
+}
