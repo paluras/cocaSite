@@ -57,21 +57,7 @@ const Blog = () => {
               ce face, face bine. Iar mai apoi, taieturile se ascund ca si cum,
               n-au fost niciodata acolo.{" "}
             </p>
-            <p>
-              {" "}
-              Doamna Maria e croitor. Face rochii de mireasa, haine pe comanda,
-              corecteaza si modifica. La inceput facea haine de dansatoare dar
-              acum nu se mai cer. Povesteste de parcursul greu din timpul
-              formarii. Nu a ajuns din prima acolo unde isi dorea. A facut haine
-              barbatesti. Dar a gasit o solutie ca spre final, sa se transfere
-              la haine de dansatoare. Si de atunci asa a fost. A imbracat multi
-              oameni. Ne arata cu mandrie o rochie de mireasa proaspat aranjata.{" "}
-            </p>
-            <p>
-              Nu ii este teama sa taie materialul marcat proaspat de ea. Stie ca
-              ce face, face bine. Iar mai apoi, taieturile se ascund ca si cum,
-              n-au fost niciodata acolo.{" "}
-            </p>
+         
 
             <span className="line"></span>
           </article>

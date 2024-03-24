@@ -17,7 +17,6 @@ const FirstPage = () => {
           <div className="icon-absolute">
             <img
               width={300}
-             
               src="/coca_logo.webp"
               alt="Logo for Coca Production"
             />
@@ -31,10 +30,10 @@ const FirstPage = () => {
             muted
             loop
             id="myVideo"
-          >  <source src="./land_video_big.webm" />
+          >
+            {" "}
+            <source src="./land_video_big.webm" />
             <source src="./land_video.webm" />
-
-          
           </video>
         </div>
       </section>
