@@ -17,8 +17,8 @@ const FirstPage = () => {
           <div className="icon-absolute">
             <img
               width={300}
-              height={300}
-              src="/coca_logo.png"
+             
+              src="/coca_logo.webp"
               alt="Logo for Coca Production"
             />
           </div>

@@ -19,6 +19,9 @@ h1{
   font-size: 32px;
   color: white;
 }
+h2{
+  font-size: 32px;
+}
 body {
   background-color: black;
 }
@@ -127,6 +130,9 @@ body {
   }
   .big-title{
     font-size: 48px;
+  }
+  h2{
+    font-size: 28px;
   }
 
 }
