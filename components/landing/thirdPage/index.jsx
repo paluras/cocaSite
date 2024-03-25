@@ -28,33 +28,30 @@ const ThirdPage = () => {
 
   return (
     <section id="third" className="third-page">
-      <div className="our-work">
-        <div className="work-title-container"></div>
-        <div className="video-container">
-          {projects.map((el, index) => (
-            <div
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-              className="test-video"
-              key={index}
-            >
-              <video
-                className="small-video"
-                src={el.smallVideoUrl}
-                autoPlay
-                playsInline
-                muted
-                loop
-                id={`myVideo-${index}`}
-              ></video>
-              <div className="video-overlay"></div>
-              <Link className="title" to={"/" + el.title}>
-                <img src={urlFor(el.logoUrl)} alt={el.title} />
-                {el.title}
-              </Link>
-            </div>
-          ))}
-        </div>
+      <div className="video-container">
+        {projects.map((el, index) => (
+          <div
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            className="test-video"
+            key={index}
+          >
+            <video
+              className="small-video"
+              src={el.smallVideoUrl}
+              autoPlay
+              playsInline
+              muted
+              loop
+              id={`myVideo-${index}`}
+            ></video>
+            <div className="video-overlay"></div>
+            <Link className="title" to={"/" + el.title}>
+              <img src={urlFor(el.logoUrl)} alt={el.title} />
+              {el.title}
+            </Link>
+          </div>
+        ))}
       </div>
     </section>
   );

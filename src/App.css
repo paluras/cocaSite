@@ -48,7 +48,7 @@ body {
   color: white;
   display: flex;
   justify-content: center;
-  font-size: 60px;
+  font-size: 52px;
   font-weight: 700;
   text-align: center;
   padding: 50px 0;
@@ -95,6 +95,35 @@ body {
 }
 .video-land.placeholder.fade-out {
   opacity: 0;
+}
+.third-page{
+  display: flex;
+  justify-content: center;
+}
+
+
+/* Initial state */
+.page-enter {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 1s, transform 1s;
+}
+
+/* Final state */
+.page-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.page-leave {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 1s, transform 1s;
+}
+
+.page-leave-active {
+  opacity: 0;
+  transform: translateX(100%);
 }
 
 @keyframes fillAndRevert {

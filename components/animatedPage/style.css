@@ -1,0 +1,22 @@
+/* Initial and final states for entering and leaving */
+.page-enter {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 1s, transform 1s;
+  }
+  
+  .page-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  .page-leave {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 1s, transform 1s;
+  }
+  
+  .page-leave-active {
+    opacity: 0;
+    transform: translateX(100%);
+  }

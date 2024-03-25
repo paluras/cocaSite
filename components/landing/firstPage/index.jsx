@@ -5,10 +5,17 @@ const FirstPage = () => {
 
   useEffect(() => {
     const videoElement = document.querySelector("video");
-    videoElement.addEventListener("loadeddata", () => {
+
+    const handleVideoLoad = () => {
       setIsVideoLoaded("0");
-    });
-  });
+    };
+
+    videoElement.addEventListener("loadeddata", handleVideoLoad);
+
+    return () => {
+      videoElement.removeEventListener("loadeddata", handleVideoLoad);
+    };
+  }, []);
 
   return (
     <>
