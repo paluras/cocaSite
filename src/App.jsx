@@ -1,14 +1,14 @@
 import "./App.css";
 
 import { Route, Routes, useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect , useState } from "react";
 import Footer from "../components/footer/footer.component";
 import Nav from "../components/nav/nav-component";
 import Landing from "../components/landing/index.jsx";
 import Blog from "../route/articles/index.jsx";
 import PageVideo from "../components/pageVideo/index.jsx";
 import Contact from "../route/contact/index.jsx";
-
+import {client } from "../sanity.js"
 function ScrollToTop() {
   const { pathname } = useLocation();
 
@@ -28,9 +28,24 @@ function App() {
     { text: "Contact", to: "/contact" },
   ];
 
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    const query = `*[_type == "project"]{
+      title,
+      "logoUrl": logo.asset->url,
+      "smallVideoUrl": smallVideo.asset->url,
+      "videoUrl": video.asset->url,
+      projectText,
+      
+    }`;
+    
+    client.fetch(query).then(setProjects).catch(console.error);
+  }, []);
+
   const videoObj = [
     {
-      src:  "./land_video.webm",
+      src: "./land_video.webm",
       title: "Numaru N",
       para: [
         "Proiectul “Numarul N” se naste din dorinta de a pune in valoare meseriile facute de oameni pasionati si dedicati. Multe intalniri ocazionale cu diversi profesionisti ne-au pus in contexte inedite care nu puteau fi pastrate doar pentru noi. Si iata, aceasta serie de mini- documentare ce au in prim-plan munca cu toate partile bune sau mai putin bune, urmareste oameni care nu au doua instante: Omul profesionist si omul in timpul liber.Am reusit sa descoperim oameni care se definesc prin meseria lor.",
@@ -50,7 +65,7 @@ function App() {
         "Perspectiva ta asupra lumii este unica, iar noi, spectatorii meritam sa o vedem.",
       ],
       linkTo: "page2",
-      url: "./camera_oranje.png",
+      url: "./camera_oranj.svg",
     },
   ];
   return (
@@ -59,20 +74,20 @@ function App() {
       <Nav text={navObj}></Nav>
 
       <Routes>
-        <Route path="/" element={<Landing videoObj={videoObj}></Landing>} />
+        <Route path="/" element={<Landing ></Landing>} />
         <Route path="/blog" element={<Blog></Blog>} />
         <Route path="/contact" element={<Contact />} />
-        {videoObj.map((element, index) => (
+        {projects.map((element, index) => (
           <Route
             key={index}
-            path={element.linkTo}
+            path={"/" + element.title}
             element={
               <>
                 <ScrollToTop />
                 <PageVideo
-                  src={element.src}
+                  src={element.videoUrl}
                   title={element.title}
-                  p={element.para}
+                  p={element.projectText}
                   url={element.url}
                 ></PageVideo>
               </>
@@ -80,7 +95,6 @@ function App() {
           />
         ))}
       </Routes>
-      
 
       <Footer></Footer>
     </>

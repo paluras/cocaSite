@@ -14,24 +14,24 @@
 
 .video-elements {
   display: flex;
+  margin: 0 auto;
+  align-items: center;
   justify-content: center;
   position: relative;
   overflow-y: visible;
   width: 90%;
-  
+
   & video {
     border-radius: 10px;
     box-shadow: 1px 4px 10px rgba(121, 111, 111, 0.534);
     width: 80%;
-   
+
     object-fit: cover;
     cursor: pointer;
-   
   }
 }
 
 .text-container {
- 
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -45,12 +45,10 @@
 }
 
 .project-logo {
-  position: absolute;
-  display: flex;
-  top: -30px;
+  right: 0;
   border-radius: 10px;
+  padding-bottom: 10px;
   height: 70px;
-  box-shadow: 1px 1px 10px rgba(121, 111, 111, 0.884);
 }
 
 .video-description {
@@ -62,17 +60,13 @@
   .text-container {
     width: 72%;
   }
-  .video-elements{
+  .video-elements {
     width: 90%;
-   
   }
- 
 }
 
 @media screen and (max-width: 700px) {
-  .project-logo{
+  .project-logo {
     height: 40px;
   }
- 
- 
 }

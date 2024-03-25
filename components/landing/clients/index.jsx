@@ -1,39 +1,38 @@
-import "./style.css"
+import "./style.css";
+import { useEffect, useState } from "react";
+import { client } from "../../../sanity";
+import { urlFor } from "../../../utility/imageBuildSanity";
 
 const Clients = () => {
+  const [logo, setLogo] = useState([]);
+
+  useEffect(() => {
+    client
+      .fetch(
+        `*[_type == "clients"]{
+          _id,
+          url,
+          "imageUrl": image.asset->url
+        }`
+      )
+      .then((data) => setLogo(data))
+      .catch(console.error);
+  }, []);
   return (
     <>
       <div className="worked-with">
         <div className="worked-icons">
-          <a href="https://www.facebook.com/fundatiatineret.tulcea/?locale=ro_RO">
-            <img
-              style={{
-                height: "75px",
-              }}
-              src="./FJT.jpg"
-              alt="FTJ Logo"
-            />
-          </a>
-
-          <a href="https://www.eematico.org/">
-            <img
-              style={{
-                height: "75px",
-              }}
-              src="./eematico_logo.png"
-              alt="Logo of Eematico"
-            />
-          </a>
-          <a href="https://edukiwi.ro/">
-            <img
-              style={{
-                height: "75px",
-                width: "120px",
-              }}
-              src="./logo-verde-new.svg"
-              alt="Logo of edu Kiwi"
-            />
-          </a>
+          {logo.map((item, index) => (
+            <a key={index} href={item.url}>
+              <img
+                style={{
+                  width: "120px",
+                }}
+                src={urlFor(item.imageUrl)}
+                alt="FTJ Logo"
+              />
+            </a>
+          ))}
         </div>
       </div>
     </>

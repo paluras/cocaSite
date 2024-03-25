@@ -1,38 +1,37 @@
 import { Link } from "react-router-dom";
+import {
+  handleMouseEnter,
+  handleMouseLeave,
+} from "../../../utility/handleMouse";
 import "./style.css";
+import { useEffect, useState } from "react";
+import { client } from "../../../sanity";
+import { urlFor } from "../../../utility/imageBuildSanity";
 
 // eslint-disable-next-line react/prop-types
-const ThirdPage = ({ videoObj }) => {
-  const handleMouseEnter = (event) => {
-    const video = event.target;
-
-    const overlay = video.parentElement.querySelector(".video-overlay");
-    const title = video.parentElement.querySelector(".title");
-
-    if (video) {
-      overlay.style.opacity = "0";
-      title.style.opacity = "1";
-    }
-  };
-
-  const handleMouseLeave = (event) => {
-  
-    const video = event.target;
-    const overlay = video.parentElement.querySelector(".video-overlay");
-    const title = video.parentElement.querySelector(".title");
-    if (overlay.style.opacity == "0") {
-      overlay.style.opacity = "0";
-      title.style.opacity = "0";
-    }
-  };
+const ThirdPage = () => {
+  const [projects, setProjects] = useState([]);
+  useEffect(() => {
+    client
+      .fetch(
+        `*[_type == "project"]{
+          title,
+          "logoUrl": logo.asset->url,
+          "smallVideoUrl": smallVideo.asset->url,
+          "videoUrl": video.asset->url,
+          projectText
+        }`
+      )
+      .then((data) => setProjects(data))
+      .catch(console.error);
+  }, []);
 
   return (
     <section id="third" className="third-page">
       <div className="our-work">
-        <div className="work-title-container">
-        </div>
+        <div className="work-title-container"></div>
         <div className="video-container">
-          {videoObj.map((el, index) => (
+          {projects.map((el, index) => (
             <div
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
@@ -41,7 +40,7 @@ const ThirdPage = ({ videoObj }) => {
             >
               <video
                 className="small-video"
-                src={el.src}
+                src={el.smallVideoUrl}
                 autoPlay
                 playsInline
                 muted
@@ -49,9 +48,8 @@ const ThirdPage = ({ videoObj }) => {
                 id={`myVideo-${index}`}
               ></video>
               <div className="video-overlay"></div>
-              <Link className="title" to={el.linkTo}>
-                
-                <img  src={el.url} alt={el.title} />
+              <Link className="title" to={"/" + el.title}>
+                <img src={urlFor(el.logoUrl)} alt={el.title} />
                 {el.title}
               </Link>
             </div>

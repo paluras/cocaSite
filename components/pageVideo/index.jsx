@@ -1,7 +1,6 @@
-import React, { useRef } from 'react'; // Import useRef from React
+import React, { useRef } from "react"; // Import useRef from React
 import "./style.css";
 import MouseFollower from "../mouseFollow";
-
 
 const PageVideo = ({ children, src, p, title, url }) => {
   const videoRef = useRef(null); // Create a reference to the video
@@ -17,7 +16,7 @@ const PageVideo = ({ children, src, p, title, url }) => {
       {children}
       <section className="video-page-main">
         <div className="video-elements">
-        <MouseFollower targetRef={videoRef} />
+          <MouseFollower targetRef={videoRef} />
 
           {/* Add a reference to the video and an onClick event listener */}
           <video
@@ -27,13 +26,17 @@ const PageVideo = ({ children, src, p, title, url }) => {
             muted
             loop
             onClick={toggleMute} // Add the onClick event listener here
-          ><source src={src}  /></video>
-          <img className="project-logo" src={url} alt={title} />
+          >
+            <source src={src} />
+          </video>
         </div>
         <div className="text-container">
           <h1 className="title-video">{title}</h1>
+
           {p.map((el, index) => (
-            <p key={index} className="video-description">{el}</p>
+            <p key={index} className="video-description">
+              {el}
+            </p>
           ))}
         </div>
       </section>

@@ -33,7 +33,7 @@ const Landing = ({ videoObj }) => {
       <SecondPage visible={visible} ref={ref} />
       <h1 className="big-title">Proiecte</h1>
 
-      <ThirdPage videoObj={videoObj} />
+      <ThirdPage  />
       <h1 className="big-title">Clienti</h1>
 
       <Clients />

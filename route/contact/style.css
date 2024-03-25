@@ -55,23 +55,23 @@ button:hover {
     padding-right: 10px;
   }
 }
-.require{
-display:grid;
-grid-template-columns:70% 20px;
-align-items:center;
-color:grey;
-font-Size:16px;
+.require {
+  display: grid;
+  grid-template-columns: 70% 20px;
+  align-items: center;
+  color: grey;
+  font-size: 16px;
 }
 
-@media screen and (max-width:600px) {
-    label:last-of-type{
-        font-size: 12px;
-        grid-template-columns: 90% 20px;
-    }
+@media screen and (max-width: 600px) {
+  label:last-of-type {
+    font-size: 12px;
+    grid-template-columns: 90% 20px;
+  }
 }
 
-@media screen and (min-width:1000px) {
-form{
-  width: 70%;
-}
+@media screen and (min-width: 1000px) {
+  form {
+    width: 70%;
+  }
 }
