@@ -5,6 +5,7 @@
   align-items: center;
   margin-top: 64px;
   gap: 30px;
+  min-height: 100vh;
 }
 
 .blog-text {

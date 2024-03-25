@@ -105,33 +105,7 @@ const Contact = () => {
           </form>
         </div>
 
-        {/* <div className="socials">
-          <h2>Socials</h2>
-          <div className="socials-container">
-            <a href="tel:+075366412332">Whatsapp</a>
-            <a
-              href="https://www.youtube.com/@cocaproduction"
-              rel="noreferrer"
-              target="_blank"
-            >
-              Youtube
-            </a>
-            <a
-              href="https://instagram.com/cocaproductionfilm?utm_source=qr&igshid=ZDc4ODBmNjlmNQ%3D%3D"
-              rel="noreferrer"
-              target="_blank"
-            >
-              Instagram
-            </a>
-            <a
-              href="https://www.facebook.com/profile.php?id=100083285113494"
-              rel="noreferrer"
-              target="_blank"
-            >
-              Facebook
-            </a>
-          </div>
-        </div> */}
+    
       </section>
     </main>
   );
