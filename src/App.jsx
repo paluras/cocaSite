@@ -11,6 +11,16 @@ import { client } from "../sanity.js";
 import RouteTransition from "../components/animatedPage/index.jsx";
 const Contact = lazy(() => import("../route/contact/index.jsx"));
 
+
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
 function App() {
   const navObj = [
     { text: "Despre Noi", to: "/#second" },
@@ -33,6 +43,8 @@ function App() {
 
     client.fetch(query).then(setProjects).catch(console.error);
   }, []);
+
+  
 
   return (
     <>
@@ -60,32 +72,38 @@ function App() {
           path="/contact"
           element={
             <RouteTransition>
-              <Suspense fallback={<div style={{
-                backgroundColor:"black",
-                height:"100vh",
-                width:"100vw"
-              }}></div>}>
+              <Suspense
+                fallback={
+                  <div
+                    style={{
+                      backgroundColor: "black",
+                      height: "100vh",
+                      width: "100vw",
+                    }}
+                  ></div>
+                }
+              >
                 <Contact />
               </Suspense>
             </RouteTransition>
           }
         />
-        {projects.map((element, index) => (
-          <Route
-            key={index}
-            path={"/" + element.title}
-            element={
-              <RouteTransition>
-                <PageVideo
-                  src={element.videoUrl}
-                  title={element.title}
-                  p={element.projectText}
-                  url={element.url}
-                />
-              </RouteTransition>
-            }
-          />
-        ))}
+
+{projects.map((element, index) => (
+  <Route key={element.title} path={"/" + element.title} element={
+    <RouteTransition>
+    <ScrollToTop />
+        <PageVideo
+        key={element.title}
+          src={element.videoUrl}
+          title={element.title}
+          p={element.projectText}
+          url={element.url}
+        />
+    
+    </RouteTransition>
+  }/>
+))}
       </Routes>
 
       <Footer></Footer>

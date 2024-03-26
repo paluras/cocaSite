@@ -2,7 +2,9 @@ import React, { useRef } from "react"; // Import useRef from React
 import "./style.css";
 import MouseFollower from "../mouseFollow";
 
+
 const PageVideo = ({ children, src, p, title, url }) => {
+
   const videoRef = useRef(null); // Create a reference to the video
 
   const toggleMute = () => {

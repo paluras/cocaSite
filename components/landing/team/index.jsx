@@ -31,7 +31,7 @@ const Team = () => {
           </div>
         </div>
         <div className="img-container">
-          <img width={300} height={300} src="./coca_photo.png" alt="" />
+          <img width={300} height={300} src="./coca_photo.webp" alt="" />
           <div className="blur"></div>
         </div>
       </div>
