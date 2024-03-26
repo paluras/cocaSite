@@ -1,7 +1,6 @@
 .worked-with {
   display: flex;
   flex-direction: column;
-  height: 20vh;
   align-items: center;
   justify-content: center;
   color: white;

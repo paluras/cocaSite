@@ -26,8 +26,11 @@ const ThirdPage = () => {
       .catch(console.error);
   }, []);
 
-  return (
+  return (<>
+
     <section id="third" className="third-page">
+    <h1 id="proiecte-title" className="big-title">Proiecte</h1>
+
       <div className="video-container">
         {projects.map((el, index) => (
           <div
@@ -54,6 +57,7 @@ const ThirdPage = () => {
         ))}
       </div>
     </section>
+    </>
   );
 };
 

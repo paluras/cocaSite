@@ -2,20 +2,17 @@ import FirstPage from "./firstPage";
 import SecondPage from "./secondPage";
 import ThirdPage from "./thirdPage";
 import Clients from "./clients";
-import { useState, useEffect } from "react";
+import { useState, useEffect, lazy, Suspense } from "react";
 import { useInView } from "react-intersection-observer";
 import Team from "./team";
 
-const Landing = ({ videoObj }) => {
+const Landing = () => {
   const [visible, setVisible] = useState();
   const { ref, inView } = useInView({});
   useEffect(() => {
     inView ? setVisible("show") : setVisible("hidden");
     return () => {};
   }, [inView]);
-
-
-  
 
   return (
     <main>
@@ -29,18 +26,12 @@ const Landing = ({ videoObj }) => {
       <a href="#third">
         <button className="snap three">III </button>
       </a>
-
-      <FirstPage />
-   
-
+      
+        <FirstPage />
+    
       <SecondPage visible={visible} ref={ref} />
-      <h1 className="big-title">Proiecte</h1>
-
-      <ThirdPage  />
-      <h1 className="big-title">Clienti</h1>
-
+      <ThirdPage />
       <Clients />
-      <h1 className="big-title">Echipa</h1>
       <Team />
     </main>
   );

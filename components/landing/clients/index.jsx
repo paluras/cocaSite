@@ -20,7 +20,12 @@ const Clients = () => {
   }, []);
   return (
     <>
-      <div className="worked-with">
+      
+
+      <section className="worked-with">
+      <h1 id="clienti-title" className="big-title">
+        Clienti
+      </h1>
         <div className="worked-icons">
           {logo.map((item, index) => (
             <a key={index} href={item.url}>
@@ -34,7 +39,7 @@ const Clients = () => {
             </a>
           ))}
         </div>
-      </div>
+      </section>
     </>
   );
 };

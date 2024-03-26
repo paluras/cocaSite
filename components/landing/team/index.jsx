@@ -2,7 +2,11 @@ import "./style.css";
 
 const Team = () => {
   return (
-    <>
+    <section className="team">
+      <h1 id="echipa-title" className="big-title">
+        Echipa
+      </h1>
+
       <div id="team" className="team-container">
         <div className="team-text-container">
           <div className="text-container-team">
@@ -35,7 +39,7 @@ const Team = () => {
           <div className="blur"></div>
         </div>
       </div>
-    </>
+    </section>
   );
 };
 

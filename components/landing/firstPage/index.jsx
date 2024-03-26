@@ -1,22 +1,5 @@
 import "./style.css";
-import { useState, useEffect } from "react";
 const FirstPage = () => {
-  const [isVideoLoaded, setIsVideoLoaded] = useState("1");
-
-  useEffect(() => {
-    const videoElement = document.querySelector("video");
-
-    const handleVideoLoad = () => {
-      setIsVideoLoaded("0");
-    };
-
-    videoElement.addEventListener("loadeddata", handleVideoLoad);
-
-    return () => {
-      videoElement.removeEventListener("loadeddata", handleVideoLoad);
-    };
-  }, []);
-
   return (
     <>
       <section id="first" className="first-page">
@@ -30,6 +13,7 @@ const FirstPage = () => {
           </div>
           <div className="gradient"></div>{" "}
           <video
+            poster="./croitor.png"
             preload="true"
             className="big-video"
             playsInline
