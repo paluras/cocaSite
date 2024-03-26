@@ -92,6 +92,7 @@ body {
 
 .big-title {
   transition: 200ms linear;
+  
 }
 
 @media screen and (max-width: 750px) {

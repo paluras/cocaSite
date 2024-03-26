@@ -9,6 +9,7 @@ import Blog from "../route/articles/index.jsx";
 import PageVideo from "../components/pageVideo/index.jsx";
 import { client } from "../sanity.js";
 import RouteTransition from "../components/animatedPage/index.jsx";
+import RacesComponent from "../route/projects/index.jsx";
 const Contact = lazy(() => import("../route/contact/index.jsx"));
 
 
@@ -24,7 +25,7 @@ const ScrollToTop = () => {
 function App() {
   const navObj = [
     { text: "Despre Noi", to: "/#second" },
-    { text: "Proiecte", to: "#third" },
+    { text: "Proiecte", to: "/projects" },
     { text: "Articole", to: "/blog" },
     { text: "Echipa", to: "#team" },
     { text: "Contact", to: "/contact" },
@@ -104,6 +105,13 @@ function App() {
     </RouteTransition>
   }/>
 ))}
+
+<Route path="/projects" element={
+ <RouteTransition>
+    <RacesComponent/>
+    </RouteTransition>
+  
+}></Route>
       </Routes>
 
       <Footer></Footer>

@@ -1,0 +1,58 @@
+.scroll-container {
+}
+
+.panel-btn {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  z-index: 100000;
+  width: 100px;
+  height: 25px;
+  background-color: rgba(255, 0, 0, 0);
+  font-size: 20px;
+  transition: 200ms linear;
+}
+
+.back:first-of-type{
+    display: none;
+}
+.back{
+    left: 20px;
+    top: 20px;
+}
+.panel-btn:hover {
+  transform: scale(1.1);
+}
+.container {
+  width: 400vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+
+.content {
+display: flex;
+flex-direction: column;
+  position: relative;
+  width: 80%;
+    & video{
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    & .goTo{
+        margin: 10px 0;
+    }
+}
+
+.panel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background: rgb(0, 0, 0);
+}

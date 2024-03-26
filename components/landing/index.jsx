@@ -2,7 +2,7 @@ import FirstPage from "./firstPage";
 import SecondPage from "./secondPage";
 import ThirdPage from "./thirdPage";
 import Clients from "./clients";
-import { useState, useEffect, lazy, Suspense } from "react";
+import { useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import Team from "./team";
 
