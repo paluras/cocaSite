@@ -30,3 +30,18 @@
     object-fit: contain;
   }
 }
+@media screen and (max-width: 400px) {
+  .worked-icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0px;
+   
+  }
+  .worked-icons > svg + img {
+    color: white;
+    width: 75px;
+    height: 60px;
+    object-fit: contain;
+  }
+}
