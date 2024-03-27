@@ -13,7 +13,7 @@ export default function Scroll() {
   const divRef = useRef();
   const [divWidth, setDivWidth] = useState(0);
   const [projects, setProjects] = useState([]);
-  // console.log(projects);
+  console.log(projects.length);
   // console.log(slider.current.style.width = divWidth * projects.length);
   useEffect(() => {
     client
@@ -42,7 +42,6 @@ export default function Scroll() {
   }, [projects.length]);
 
   let handleClick = () => {
-    console.log("ran");
     let scrollPosition = window.scrollY;
     window.scrollTo({
       top: scrollPosition + divWidth,
@@ -50,7 +49,7 @@ export default function Scroll() {
     });
   };
   let handleClickBack = () => {
-    console.log("ran");
+
     let scrollPosition = window.scrollY;
     window.scrollTo({
       top: scrollPosition - divWidth,
@@ -60,26 +59,29 @@ export default function Scroll() {
 
   useLayoutEffect(() => {
     if (projects.length && slider.current) {
-      let panels = gsap.utils.toArray(".panel");
-
-      gsap.to(panels, {
-        xPercent: -100 * (panels.length - 1),
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: slider.current,
-          pin: true,
-          scrub: 1,
-          snap: 1 / (panels.length - 1),
-          end: () => `+=${slider.current.offsetWidth}`,
-        },
-      });
+      let ctx = gsap.context(() => {
+        let panels = gsap.utils.toArray(".panel");
+        gsap.to(panels, {
+          xPercent: -100 * (panels.length - 1),
+          ease: "none",
+          scrollTrigger: {
+            trigger: slider.current,
+            pin: true,
+            scrub: 1,
+            snap: 1 / (panels.length - 1),
+            end: () => "+=" + slider.current.offsetWidth
+          }
+        });
+      }, component);
+      return () => ctx.revert();
     }
   }, [projects, divWidth]);
 
   return (
     <div className="scroll-container" ref={component}>
       <div
-        style={{ width: `${100 * (projects.length - 1)}vw` }}
+        style={{ width: `${100 * projects.length}vw`,
+      height:"100vh" }}
         ref={slider}
         className="container"
       >

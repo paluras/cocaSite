@@ -9,9 +9,9 @@ import Blog from "../route/articles/index.jsx";
 import PageVideo from "../components/pageVideo/index.jsx";
 import { client } from "../sanity.js";
 import RouteTransition from "../components/animatedPage/index.jsx";
-// import Scroll from "../route/projects/index.jsx";
+import Scroll from "../route/projects/index.jsx";
 const Contact = lazy(() => import("../route/contact/index.jsx"));
-const Scroll = lazy(()=>import("../route/projects/index.jsx"))
+// const Scroll = lazy(()=>import("../route/projects/index.jsx"))
 const ScrollToTop = () => {
   const { pathname } = useLocation();
 
@@ -109,21 +109,10 @@ function App() {
         <Route
           path="/projects"
           element={
-            <RouteTransition>
-              <Suspense
-                fallback={
-                  <div
-                    style={{
-                      backgroundColor: "black",
-                      height: "100vh",
-                      width: "100vw",
-                    }}
-                  ></div>
-                }
-              >
+          
               <Scroll />
-              </Suspense>
-            </RouteTransition>
+             
+         
           }
         ></Route>
       </Routes>
