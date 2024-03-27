@@ -79,7 +79,7 @@ export default function Scroll() {
   return (
     <div className="scroll-container" ref={component}>
       <div
-        style={{ width: `${100 * projects.length}vw` }}
+        style={{ width: `${100 * (projects.length - 1)}vw` }}
         ref={slider}
         className="container"
       >
