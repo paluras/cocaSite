@@ -23,7 +23,8 @@ export default function Scroll() {
         "logoUrl": logo.asset->url,
         "smallVideoUrl": smallVideo.asset->url,
         "videoUrl": video.asset->url,
-        projectText
+        projectText,
+        introduction
       }`
       )
       .then((data) => setProjects(data))
@@ -76,7 +77,8 @@ export default function Scroll() {
       return () => ctx.revert();
     }
   }, [projects, divWidth]);
-
+  let string = "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione ipsum, veniam perspiciatis assumenda sed consectetur eius. Suscipit tempora, blanditiis repellat amet ullam molestiae est minus aliquid fugiat. Porro, suscipit repellat?"
+  console.log(string.length);
   return (
     <div className="scroll-container" ref={component}>
       <div
@@ -106,7 +108,7 @@ export default function Scroll() {
               <a className="goTo" href={"/" + item.title}>
                 {item.title}
               </a>
-              <p>Small texts</p>
+              <p>{item.introduction}</p>
             </div>
           </div>
         ))}
