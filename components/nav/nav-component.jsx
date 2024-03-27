@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import "./nav.styles.css";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
@@ -7,11 +7,37 @@ import { useEffect } from "react";
 function Nav({ text }) {
   const [pop, setPop] = useState(true);
   const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
+  const [scrollPosition, setScrollPosition] = useState(window.scrollY);
+  const [bgColor , setBgColor]= useState ("none");
+  console.log(scrollPosition , bgColor);
   const [gridAnim, setGridAnim] = useState("0fr");
 
+
+  
+  
+  
+
+  
+  
+  
   const updateViewportWidth = () => {
     setViewportWidth(window.innerWidth);
   };
+  const updateScrollPosition = () => {
+ 
+    setScrollPosition(window.scrollY);
+  };
+
+  useEffect(() => {
+    setTimeout(() => {
+      window.addEventListener("scroll", updateScrollPosition);
+    }, 500);
+    scrollPosition > 0 ? setBgColor("black") : setBgColor("transparent")
+
+    return () => {
+      window.removeEventListener("scroll", updateScrollPosition);
+    };
+  });
 
   // Add an event listener to update the viewport width when the window is resized
   useEffect(() => {
@@ -29,8 +55,11 @@ function Nav({ text }) {
 
   return (
     <>
-      <header>
-        <nav>
+      <header >
+        <nav style={{
+        backgroundColor:bgColor,
+        boxShadow: `0px -5px 10px 8px ${bgColor}`
+      }}>
           <div className="left-container-nav">
             <Link to={"/"}>
               {" "}
@@ -43,7 +72,7 @@ function Nav({ text }) {
           </div>
           {viewportWidth > 500 ? (
             <div className="right-container-nav">
-              {text.map((item , index) => (
+              {text.map((item, index) => (
                 <div key={index} className="nav-menu">
                   <a href={item.to}>{item.text}</a>
                 </div>

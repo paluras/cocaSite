@@ -49,21 +49,6 @@ export default function Scroll() {
     });
   };
 
-  const [runAnimations, setRunAnimations] = useState(false);
-
-  useEffect(() => {
-    const observer = new MutationObserver(() => {
-      setRunAnimations((prevState) => !prevState);
-    });
-
-    observer.observe(slider.current, {
-      childList: true,
-      subtree: true,
-    });
-
-    // cleanup
-    return () => observer.disconnect();
-  }, [slider, projects]);
 
   useLayoutEffect(() => {
     if (projects.length && slider.current) {
@@ -105,6 +90,7 @@ export default function Scroll() {
               ></video>
               </a>
               <a className="goTo" href={"/" + item.title}>{item.title}</a>
+              <p>Small texts</p>
             </div>
           </div>
         ))}

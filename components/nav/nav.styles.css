@@ -1,7 +1,9 @@
 nav {
+ 
   display: flex;
-  position: absolute;
-
+  backdrop-filter:blur(1px);
+  position: fixed;
+  transition:  500ms linear;
   justify-content: space-between;
   padding: 20px 5%;
   width: 90%;

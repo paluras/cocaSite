@@ -9,10 +9,8 @@ import Blog from "../route/articles/index.jsx";
 import PageVideo from "../components/pageVideo/index.jsx";
 import { client } from "../sanity.js";
 import RouteTransition from "../components/animatedPage/index.jsx";
-import RacesComponent from "../route/projects/index.jsx";
+import Scroll from "../route/projects/index.jsx";
 const Contact = lazy(() => import("../route/contact/index.jsx"));
-
-
 const ScrollToTop = () => {
   const { pathname } = useLocation();
 
@@ -44,8 +42,6 @@ function App() {
 
     client.fetch(query).then(setProjects).catch(console.error);
   }, []);
-
-  
 
   return (
     <>
@@ -90,28 +86,26 @@ function App() {
           }
         />
 
-{projects.map((element, index) => (
-  <Route key={element.title} path={"/" + element.title} element={
-    <RouteTransition>
-    <ScrollToTop />
-        <PageVideo
-        key={element.title}
-          src={element.videoUrl}
-          title={element.title}
-          p={element.projectText}
-          url={element.url}
-        />
-    
-    </RouteTransition>
-  }/>
-))}
+        {projects.map((element, index) => (
+          <Route
+            key={element.title}
+            path={"/" + element.title}
+            element={
+              <RouteTransition>
+                <ScrollToTop />
+                <PageVideo
+                  key={element.title}
+                  src={element.videoUrl}
+                  title={element.title}
+                  p={element.projectText}
+                  url={element.url}
+                />
+              </RouteTransition>
+            }
+          />
+        ))}
 
-<Route path="/projects" element={
- <RouteTransition>
-    <RacesComponent/>
-    </RouteTransition>
-  
-}></Route>
+        <Route path="/projects" element={<Scroll />}></Route>
       </Routes>
 
       <Footer></Footer>
