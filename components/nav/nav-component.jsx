@@ -9,7 +9,6 @@ function Nav({ text }) {
   const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
   const [scrollPosition, setScrollPosition] = useState(window.scrollY);
   const [bgColor , setBgColor]= useState ("none");
-  console.log(scrollPosition , bgColor);
   const [gridAnim, setGridAnim] = useState("0fr");
 
 
@@ -61,14 +60,14 @@ function Nav({ text }) {
         boxShadow: `0px -5px 10px 8px ${bgColor}`
       }}>
           <div className="left-container-nav">
-            <Link to={"/"}>
+            <a href={"/#first"}>
               {" "}
               <img
                 style={{}}
                 src="/just_coca.png"
                 alt="Logo for Coca Production"
               />
-            </Link>
+            </a>
           </div>
           {viewportWidth > 500 ? (
             <div className="right-container-nav">

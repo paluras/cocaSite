@@ -26,6 +26,7 @@ p {
 }
 body {
   background-color: black;
+  scroll-behavior:unset;
 }
 
 *::-webkit-scrollbar {
