@@ -51,11 +51,15 @@ function App() {
     types: {
       image: ({ value }) => (
         <img
-          style={{
-            width: "100%",
-            padding: "20px 0px",
-            objectFit: "contain",
-          }}
+        style={{
+          margin: "20px auto 20px 0",
+          borderRadius: "10px",
+          width: "100%",
+          maxHeight: "40vh",
+         
+          objectFit: "contain",
+          float: "left"
+        }}
           src={urlFor(value.asset)}
         />
       ),
