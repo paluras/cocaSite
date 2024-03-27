@@ -1,5 +1,11 @@
 
+.team-container:nth-child(odd)  {
 
+   & .img-container{
+    grid-row: 1 / 2;
+   }
+ 
+}
 
 .team-container {
   color: white;
@@ -9,14 +15,21 @@
   align-items: center;
   margin: 0 auto;
   grid-template-columns: 1fr 1fr;
+  padding: 20px 0;
+
+ 
 
   & .text-container-team {
+  
     & p {
       padding: 10px 0px;
     }
   }
 
+  
+
   & .img-container {
+
     position: relative;
     height: 100%;
     overflow: hidden;
@@ -46,6 +59,14 @@
   .team-container{
     grid-template-columns: 1fr;
   }
+
+  .team-container:nth-child(odd)  {
+
+    & .img-container{
+     grid-row: 2/3;
+    }
+  
+ }
   
 }
 

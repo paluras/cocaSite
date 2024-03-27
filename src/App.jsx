@@ -8,11 +8,13 @@ import Landing from "../components/landing/index.jsx";
 import Blog from "../route/articles/index.jsx";
 import PageVideo from "../components/pageVideo/index.jsx";
 import { client } from "../sanity.js";
+import { urlFor } from "../utility/imageBuildSanity.js";
 import RouteTransition from "../components/animatedPage/index.jsx";
 import Team from "../route/team/index.jsx";
+import { PortableText } from "@portabletext/react";
 // import Scroll from "../route/projects/index.jsx";
 const Contact = lazy(() => import("../route/contact/index.jsx"));
-const Scroll = lazy(()=>import("../route/projects/index.jsx"))
+const Scroll = lazy(() => import("../route/projects/index.jsx"));
 const ScrollToTop = () => {
   const { pathname } = useLocation();
 
@@ -32,18 +34,34 @@ function App() {
   ];
 
   const [projects, setProjects] = useState([]);
+  console.log(projects);
   useEffect(() => {
     const query = `*[_type == "project"]{
       title,
       "logoUrl": logo.asset->url,
       "smallVideoUrl": smallVideo.asset->url,
       "videoUrl": video.asset->url,
-      projectText,
+      body,
       
     }`;
 
     client.fetch(query).then(setProjects).catch(console.error);
   }, []);
+
+  const serializers = {
+    types: {
+      image: ({ value }) => (
+        <img
+          style={{
+            width: "100%",
+            padding: "20px 0px",
+            objectFit: "contain",
+          }}
+          src={urlFor(value.asset)}
+        />
+      ),
+    },
+  };
 
   return (
     <>
@@ -99,9 +117,10 @@ function App() {
                   key={element.title}
                   src={element.videoUrl}
                   title={element.title}
-                  p={element.projectText}
                   url={element.url}
-                />
+                >
+                  <PortableText value={element.body} components={serializers} />
+                </PageVideo>
               </RouteTransition>
             }
           />
@@ -122,18 +141,14 @@ function App() {
                   ></div>
                 }
               >
-                 <ScrollToTop />
-              <Scroll />
+                <ScrollToTop />
+                <Scroll />
               </Suspense>
             </RouteTransition>
           }
         ></Route>
 
-        <Route path="/team" element={
-          <Team />
-        }>
-
-        </Route>
+        <Route path="/team" element={<Team />}></Route>
       </Routes>
 
       <Footer></Footer>

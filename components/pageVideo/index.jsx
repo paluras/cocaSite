@@ -2,9 +2,7 @@ import React, { useRef } from "react"; // Import useRef from React
 import "./style.css";
 import MouseFollower from "../mouseFollow";
 
-
-const PageVideo = ({ children, src, p, title, url }) => {
-
+const PageVideo = ({ children, src,  title, url }) => {
   const videoRef = useRef(null); // Create a reference to the video
 
   const toggleMute = () => {
@@ -15,7 +13,6 @@ const PageVideo = ({ children, src, p, title, url }) => {
 
   return (
     <>
-      {children}
       <section className="video-page-main">
         <div className="video-elements">
           <MouseFollower targetRef={videoRef} />
@@ -34,12 +31,7 @@ const PageVideo = ({ children, src, p, title, url }) => {
         </div>
         <div className="text-container">
           <h1 className="title-video">{title}</h1>
-
-          {p.map((el, index) => (
-            <p key={index} className="video-description">
-              {el}
-            </p>
-          ))}
+          {children}
         </div>
       </section>
     </>

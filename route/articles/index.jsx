@@ -3,6 +3,7 @@ import { client } from "../../sanity";
 import { urlFor } from "../../utility/imageBuildSanity";
 
 import "./style.css";
+import { PortableText } from "@portabletext/react";
 
 const Blog = () => {
   const [articles, setArticles] = useState([]);
@@ -10,7 +11,7 @@ const Blog = () => {
   useEffect(() => {
     client
       .fetch(
-        `*[_type == "article"]{date, title, "imageUrl": image.asset->url, article}`
+        `*[_type == "article"]{date, body, title, "imageUrl": image.asset->url}`
       )
       .then((data) => setArticles(data))
       .catch(console.error);
@@ -35,10 +36,10 @@ const Blog = () => {
                 alt={article.title}
               />
               <h2>{article.title}</h2>
-              {article.article.map((item, index) => (
-                <p key={index}>{item}</p>
-              ))}
+             
+              <PortableText value={article.body} />
               <span className="line"></span>
+              
             </article>
           ))}
         </div>
