@@ -13,7 +13,8 @@ export default function Scroll() {
   const divRef = useRef();
   const [divWidth, setDivWidth] = useState(0);
   const [projects, setProjects] = useState([]);
-
+  // console.log(projects);
+  // console.log(slider.current.style.width = divWidth * projects.length);
   useEffect(() => {
     client
       .fetch(
@@ -38,7 +39,7 @@ export default function Scroll() {
     window.addEventListener("resize", handleResize);
     handleResize();
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  }, [projects.length]);
 
   let handleClick = () => {
     console.log("ran");
@@ -74,11 +75,15 @@ export default function Scroll() {
         },
       });
     }
-  }, [projects]);
+
+    
+
+
+  }, [projects,divWidth]);
 
   return (
-    <div className="scroll-container" ref={component}>
-      <div ref={slider} className="container">
+    <div  className="scroll-container" ref={component}>
+      <div  style={{ width: `${divWidth * projects.length}px` }} ref={slider} className="container">
         {projects.map((item, index) => (
           <div key={index} className="panel">
             <div ref={divRef} className="content">
