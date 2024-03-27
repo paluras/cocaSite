@@ -58,7 +58,6 @@ export default function Scroll() {
     });
   };
 
-
   useLayoutEffect(() => {
     if (projects.length && slider.current) {
       let panels = gsap.utils.toArray(".panel");
@@ -75,15 +74,15 @@ export default function Scroll() {
         },
       });
     }
-
-    
-
-
-  }, [projects,divWidth]);
+  }, [projects, divWidth]);
 
   return (
-    <div  className="scroll-container" ref={component}>
-      <div  style={{ width: `${divWidth * projects.length}px` }} ref={slider} className="container">
+    <div className="scroll-container" ref={component}>
+      <div
+        style={{ width: `${100 * projects.length}vw` }}
+        ref={slider}
+        className="container"
+      >
         {projects.map((item, index) => (
           <div key={index} className="panel">
             <div ref={divRef} className="content">
@@ -93,16 +92,18 @@ export default function Scroll() {
               <button className="back panel-btn" onClick={handleClickBack}>
                 Inapoi
               </button>
-            <a href={"/" + item.title}>
-              <video
-                src={item.videoUrl}
-                autoPlay
-                playsInline
-                muted
-                loop
-              ></video>
+              <a href={"/" + item.title}>
+                <video
+                  src={item.videoUrl}
+                  autoPlay
+                  playsInline
+                  muted
+                  loop
+                ></video>
               </a>
-              <a className="goTo" href={"/" + item.title}>{item.title}</a>
+              <a className="goTo" href={"/" + item.title}>
+                {item.title}
+              </a>
               <p>Small texts</p>
             </div>
           </div>
