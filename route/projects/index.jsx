@@ -48,6 +48,14 @@ export default function Scroll() {
       behavior: "smooth",
     });
   };
+  let handleClickBack = () => {
+    console.log("ran");
+    let scrollPosition = window.scrollY;
+    window.scrollTo({
+      top: scrollPosition - divWidth,
+      behavior: "smooth",
+    });
+  };
 
 
   useLayoutEffect(() => {
@@ -77,7 +85,7 @@ export default function Scroll() {
               <button className="next panel-btn" onClick={handleClick}>
                 Inainte
               </button>
-              <button className="back panel-btn" onClick={handleClick}>
+              <button className="back panel-btn" onClick={handleClickBack}>
                 Inapoi
               </button>
             <a href={"/" + item.title}>
