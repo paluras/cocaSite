@@ -8,6 +8,12 @@
   min-height: 100vh;
 }
 
+
+.blog:hover > .big-title {
+  color: #ffbe59;
+  text-shadow: 1px 2px 5px red;
+}
+
 .blog-text {
   display: flex;
   flex-direction: column;

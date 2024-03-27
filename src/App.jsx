@@ -9,6 +9,7 @@ import Blog from "../route/articles/index.jsx";
 import PageVideo from "../components/pageVideo/index.jsx";
 import { client } from "../sanity.js";
 import RouteTransition from "../components/animatedPage/index.jsx";
+import Team from "../route/team/index.jsx";
 // import Scroll from "../route/projects/index.jsx";
 const Contact = lazy(() => import("../route/contact/index.jsx"));
 const Scroll = lazy(()=>import("../route/projects/index.jsx"))
@@ -26,7 +27,7 @@ function App() {
     { text: "Despre Noi", to: "/#second" },
     { text: "Proiecte", to: "/projects" },
     { text: "Articole", to: "/blog" },
-    { text: "Echipa", to: "#team" },
+    { text: "Echipa", to: "/team" },
     { text: "Contact", to: "/contact" },
   ];
 
@@ -127,6 +128,12 @@ function App() {
             </RouteTransition>
           }
         ></Route>
+
+        <Route path="/team" element={
+          <Team />
+        }>
+
+        </Route>
       </Routes>
 
       <Footer></Footer>

@@ -4,7 +4,7 @@ import ThirdPage from "./thirdPage";
 import Clients from "./clients";
 import { useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-import Team from "./team";
+import TeamLand from "./team";
 
 const Landing = () => {
   const [visible, setVisible] = useState();
@@ -32,7 +32,7 @@ const Landing = () => {
       <SecondPage visible={visible} ref={ref} />
       <ThirdPage />
       <Clients />
-      <Team />
+      <TeamLand />
     </main>
   );
 };

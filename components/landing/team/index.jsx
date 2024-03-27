@@ -1,6 +1,6 @@
 import "./style.css";
 
-const Team = () => {
+const TeamLand = () => {
   return (
     <section className="team">
       <h1 id="echipa-title" className="big-title">
@@ -43,4 +43,4 @@ const Team = () => {
   );
 };
 
-export default Team;
+export default TeamLand;

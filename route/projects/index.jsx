@@ -3,7 +3,6 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import { useLayoutEffect, useState, useEffect, useRef } from "react";
 import "./style.css";
 import { client } from "../../sanity";
-import { urlFor } from "../../utility/imageBuildSanity";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -14,6 +13,7 @@ export default function Scroll() {
   const [divWidth, setDivWidth] = useState(0);
   const [projects, setProjects] = useState([]);
   console.log(projects.length);
+  console.log(divWidth);
   // console.log(slider.current.style.width = divWidth * projects.length);
   useEffect(() => {
     client
@@ -44,7 +44,7 @@ export default function Scroll() {
   let handleClick = () => {
     let scrollPosition = window.scrollY;
     window.scrollTo({
-      top: scrollPosition + divWidth,
+      top: scrollPosition + divWidth ,
       behavior: "smooth",
     });
   };

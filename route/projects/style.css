@@ -59,6 +59,13 @@ flex-direction: column;
   background: rgb(0, 0, 0);
 }
 
+.panel:first-child > .content > .back{
+    display: none;
+} 
+.panel:last-child > .content > .next{
+    display: none;
+} 
+
 @media screen and (max-width:500px) {
     .panel{
         height: 80vh;

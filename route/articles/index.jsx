@@ -19,7 +19,7 @@ const Blog = () => {
   return (
     <>
       <main className="blog">
-        <h1>Articole</h1>
+        <h1 id="echipa-title" className="big-title">Articole</h1>
 
         {/* Map through the blogData array and create a blog post for each item */}
 
