@@ -55,7 +55,7 @@ function App() {
           margin: "20px auto 20px 0",
           borderRadius: "10px",
           width: "100%",
-          maxHeight: "40vh",
+         
          
           objectFit: "contain",
           float: "left"
