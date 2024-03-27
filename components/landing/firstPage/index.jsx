@@ -13,7 +13,6 @@ const FirstPage = () => {
           </div>
           <div className="gradient"></div>{" "}
           <video
-            poster="./croitor.png"
             preload="true"
             className="big-video"
             playsInline
