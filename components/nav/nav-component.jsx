@@ -57,7 +57,7 @@ function Nav({ text }) {
       <header >
         <nav style={{
         backgroundColor:bgColor,
-        boxShadow: `0px -5px 10px 8px ${bgColor}`
+        boxShadow: `10px 10px 20px 8px ${bgColor}`
       }}>
           <div className="left-container-nav">
             <a href={"/#first"}>

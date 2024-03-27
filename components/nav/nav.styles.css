@@ -3,9 +3,9 @@ nav {
   display: flex;
   backdrop-filter:blur(1px);
   position: fixed;
-  transition:  500ms linear;
+  transition: 500ms linear;
   justify-content: space-between;
-  padding: 20px 5%;
+  padding: 20px 5% 0px 5%;
   width: 90%;
   z-index: 1000000;
 }
