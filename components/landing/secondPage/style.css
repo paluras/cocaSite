@@ -25,6 +25,10 @@
   padding: 20px;
   width: 70%;
   color: white;
+
+    & h2{
+      margin: 10px 0;
+    }
 }
 .about-us-container.two-section {
   display: flex;
