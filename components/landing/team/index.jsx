@@ -5,7 +5,6 @@ import { PortableText } from "@portabletext/react";
 import { urlFor } from "../../../utility/imageBuildSanity";
 const TeamLand = () => {
   const [team, setTeam] = useState([]);
-  console.log(team);
   useEffect(() => {
     const query = `*[_type == "team"]{
       title,
@@ -22,8 +21,8 @@ const TeamLand = () => {
       <h1 id="echipa-title" className="big-title">
         Echipa
       </h1>
-      {team.map((item) => (
-        <div id="team" className="team-container">
+      {team.map((item , index) => (
+        <div key={index} id="team" className="team-container">
         
             <div className="text-container-team">
               <h2>{item.title}</h2>

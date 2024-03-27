@@ -34,7 +34,6 @@ function App() {
   ];
 
   const [projects, setProjects] = useState([]);
-  console.log(projects);
   useEffect(() => {
     const query = `*[_type == "project"]{
       title,
