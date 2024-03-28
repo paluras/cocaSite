@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import "./nav.styles.css";
-import { Link } from "react-router-dom";
+import { Link} from "react-router-dom";
 import { useEffect } from "react";
 
 // eslint-disable-next-line react/prop-types
@@ -8,22 +8,13 @@ function Nav({ text }) {
   const [pop, setPop] = useState(true);
   const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
   const [scrollPosition, setScrollPosition] = useState(window.scrollY);
-  const [bgColor , setBgColor]= useState ("none");
+  const [bgColor, setBgColor] = useState("none");
   const [gridAnim, setGridAnim] = useState("0fr");
 
-
-  
-  
-  
-
-  
-  
-  
   const updateViewportWidth = () => {
     setViewportWidth(window.innerWidth);
   };
   const updateScrollPosition = () => {
- 
     setScrollPosition(window.scrollY);
   };
 
@@ -31,7 +22,7 @@ function Nav({ text }) {
     setTimeout(() => {
       window.addEventListener("scroll", updateScrollPosition);
     }, 500);
-    scrollPosition > 0 ? setBgColor("black") : setBgColor("transparent")
+    scrollPosition > 0 ? setBgColor("black") : setBgColor("transparent");
 
     return () => {
       window.removeEventListener("scroll", updateScrollPosition);
@@ -54,11 +45,13 @@ function Nav({ text }) {
 
   return (
     <>
-      <header >
-        <nav style={{
-        backgroundColor:bgColor,
-        boxShadow: `10px 10px 20px 8px ${bgColor}`
-      }}>
+      <header>
+        <nav
+          style={{
+            backgroundColor: bgColor,
+            boxShadow: `10px 10px 20px 8px ${bgColor}`,
+          }}
+        >
           <div className="left-container-nav">
             <a href={"/#first"}>
               {" "}
@@ -114,7 +107,8 @@ function Nav({ text }) {
                 <ul>
                   {text.map((item, index) => (
                     <li key={index}>
-                      <a href={item.to}>{item.text}</a>
+                      {/* <a href={item.to}>{item.text}</a> */}
+                      <Link to={item.to}>{item.text}</Link>
                     </li>
                   ))}
                 </ul>

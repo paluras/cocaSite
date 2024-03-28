@@ -34,6 +34,7 @@ function App() {
   ];
 
   const [projects, setProjects] = useState([]);
+  console.log(projects);
   useEffect(() => {
     const query = `*[_type == "project"]{
       title,
@@ -41,11 +42,15 @@ function App() {
       "smallVideoUrl": smallVideo.asset->url,
       "videoUrl": video.asset->url,
       body,
-      
+      "column": body[_type == "embeddedArticle"]
     }`;
 
     client.fetch(query).then(setProjects).catch(console.error);
   }, []);
+
+
+console.log(projects[0]);
+  
 
   const serializers = {
     types: {
@@ -63,8 +68,36 @@ function App() {
           src={urlFor(value.asset)}
         />
       ),
+      article:({value}) => (
+        // Instead of this we create a component
+       <div style={{
+        display:"flex",
+        width:"100%",
+        justifyContent:"space-around"
+       }}>
+        <p>{value.date}</p>
+        <p>{value.title}</p>
+        </div>
+      ),
+      embeddedArticle:({value}) => (
+        <div style={{
+          width:"100%",
+          display:"flex",
+          gap:"20px",
+          padding: "20px 0"
+        }}>
+        <p style={{
+          width:"50%"
+        }}>{value.leftColumn}</p>
+        <p style={{
+          width:"50%"
+        }}>{value.rightColumn}</p>
+        </div>
+      )
     },
   };
+
+  console.log(serializers);
 
   return (
     <>
@@ -122,7 +155,7 @@ function App() {
                   title={element.title}
                   url={element.url}
                 >
-                  <PortableText value={element.body} components={serializers} />
+                  <PortableText value={element.body } components={serializers} />
                 </PageVideo>
               </RouteTransition>
             }
