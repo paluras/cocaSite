@@ -17,18 +17,7 @@ const Landing = () => {
   return (
     <main>
       {" "}
-      <a href="#first">
-        <button className="snap">I </button>
-      </a>
-      <a href="#second">
-        <button className="snap two">II </button>
-      </a>
-      <a href="#third">
-        <button className="snap three">III </button>
-      </a>
-      
-        <FirstPage />
-    
+      <FirstPage />
       <SecondPage visible={visible} ref={ref} />
       <ThirdPage />
       <Clients />
