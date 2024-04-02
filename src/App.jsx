@@ -90,7 +90,7 @@ console.log(projects[0]);
           width:"50%"
         }}>{value.leftColumn}</p>
         <p style={{
-          width:"50%"
+          width:"51%"
         }}>{value.rightColumn}</p>
         </div>
       )
